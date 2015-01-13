@@ -1,0 +1,123 @@
+2012-06-13 13:02:07
+Full thread dump Java HotSpot(TM) Server VM (16.0-b13 mixed mode):
+
+"Attach Listener" daemon prio=10 tid=0x098dbc00 nid=0x5fd8 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"thread-2" prio=10 tid=0x7bd49000 nid=0x5fa7 waiting for monitor entry [0x7b625000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.madding.shared.bugs.deadlock.DeadLockMarker$2.run(DeadLockMarker.java:43)
+	- waiting to lock <0xa27a4d58> (a java.lang.Object)
+	- locked <0xa27a4d60> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:619)
+
+   Locked ownable synchronizers:
+	- None
+
+"thread-1" prio=10 tid=0x7bd47c00 nid=0x5fa6 waiting for monitor entry [0x7b676000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.madding.shared.bugs.deadlock.DeadLockMarker$1.run(DeadLockMarker.java:28)
+	- waiting to lock <0xa27a4d60> (a java.lang.Object)
+	- locked <0xa27a4d58> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:619)
+
+   Locked ownable synchronizers:
+	- None
+
+"Low Memory Detector" daemon prio=10 tid=0x7bd04800 nid=0x5fa4 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"CompilerThread1" daemon prio=10 tid=0x7bd02800 nid=0x5fa3 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"CompilerThread0" daemon prio=10 tid=0x7bd00800 nid=0x5fa2 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" daemon prio=10 tid=0x098d4800 nid=0x5fa1 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" daemon prio=10 tid=0x098c4400 nid=0x5fa0 in Object.wait() [0x7ba63000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0xa2760b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0xa2760b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" daemon prio=10 tid=0x098bf800 nid=0x5f9f in Object.wait() [0x7bab4000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0xa2760a18> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0xa2760a18> (a java.lang.ref.Reference$Lock)
+
+   Locked ownable synchronizers:
+	- None
+
+"main" prio=10 tid=0x09842400 nid=0x5f97 in Object.wait() [0xb6ba6000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0xa27a8e28> (a java.lang.Thread)
+	at java.lang.Thread.join(Thread.java:1143)
+	- locked <0xa27a8e28> (a java.lang.Thread)
+	at java.lang.Thread.join(Thread.java:1196)
+	at com.madding.shared.bugs.deadlock.DeadLockMarker.main(DeadLockMarker.java:53)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" prio=10 tid=0x098bcc00 nid=0x5f9e runnable 
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0x09849400 nid=0x5f9c runnable 
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0x0984ac00 nid=0x5f9d runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x7bd06800 nid=0x5fa5 waiting on condition 
+
+JNI global references: 670
+
+
+Found one Java-level deadlock:
+=============================
+"thread-2":
+  waiting to lock monitor 0x098c40a4 (object 0xa27a4d58, a java.lang.Object),
+  which is held by "thread-1"
+"thread-1":
+  waiting to lock monitor 0x098d952c (object 0xa27a4d60, a java.lang.Object),
+  which is held by "thread-2"
+
+Java stack information for the threads listed above:
+===================================================
+"thread-2":
+	at com.madding.shared.bugs.deadlock.DeadLockMarker$2.run(DeadLockMarker.java:43)
+	- waiting to lock <0xa27a4d58> (a java.lang.Object)
+	- locked <0xa27a4d60> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:619)
+"thread-1":
+	at com.madding.shared.bugs.deadlock.DeadLockMarker$1.run(DeadLockMarker.java:28)
+	- waiting to lock <0xa27a4d60> (a java.lang.Object)
+	- locked <0xa27a4d58> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:619)
+
+Found 1 deadlock.
+

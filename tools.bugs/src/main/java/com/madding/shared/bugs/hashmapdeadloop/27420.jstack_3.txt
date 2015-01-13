@@ -1,0 +1,94 @@
+2012-06-13 13:12:39
+Full thread dump Java HotSpot(TM) Server VM (16.0-b13 mixed mode):
+
+"Attach Listener" daemon prio=10 tid=0x086bd000 nid=0x6b94 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"DestroyJavaVM" prio=10 tid=0x085d5000 nid=0x6b1d waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Thread-1" prio=10 tid=0x086b1800 nid=0x6b29 runnable [0x7b4ab000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.HashMap.transfer(HashMap.java:484)
+	at java.util.HashMap.resize(HashMap.java:463)
+	at java.util.HashMap.addEntry(HashMap.java:755)
+	at java.util.HashMap.put(HashMap.java:385)
+	at com.madding.shared.bugs.hashmapdeadloop.HashMapLoop$2.run(HashMapLoop.java:24)
+
+   Locked ownable synchronizers:
+	- None
+
+"Thread-0" prio=10 tid=0x086b0000 nid=0x6b28 runnable [0x7b4fc000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.HashMap.transfer(HashMap.java:484)
+	at java.util.HashMap.resize(HashMap.java:463)
+	at java.util.HashMap.addEntry(HashMap.java:755)
+	at java.util.HashMap.put(HashMap.java:385)
+	at com.madding.shared.bugs.hashmapdeadloop.HashMapLoop$1.run(HashMapLoop.java:14)
+
+   Locked ownable synchronizers:
+	- None
+
+"Low Memory Detector" daemon prio=10 tid=0x0866cc00 nid=0x6b26 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"CompilerThread1" daemon prio=10 tid=0x0866b000 nid=0x6b25 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"CompilerThread0" daemon prio=10 tid=0x08669000 nid=0x6b24 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" daemon prio=10 tid=0x08667800 nid=0x6b23 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" daemon prio=10 tid=0x08657000 nid=0x6b22 in Object.wait() [0x7ba11000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0xa2600b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0xa2600b10> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" daemon prio=10 tid=0x08652400 nid=0x6b21 in Object.wait() [0x7ba62000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0xa2600a18> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0xa2600a18> (a java.lang.ref.Reference$Lock)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" prio=10 tid=0x0864f800 nid=0x6b20 runnable 
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0x085dc000 nid=0x6b1e runnable 
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0x085dd800 nid=0x6b1f runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x0866ec00 nid=0x6b27 waiting on condition 
+
+JNI global references: 675
+
