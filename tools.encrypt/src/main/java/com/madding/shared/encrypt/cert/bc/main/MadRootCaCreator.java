@@ -18,7 +18,7 @@ import com.madding.shared.encrypt.cert.gen.MadBCCertGenerator;
  */
 public class MadRootCaCreator implements MadBCConstant {
 
-    public static final String MAD_ROOT_CA = "/home/madding/output/mad_root_ca";
+    public static final String MAD_ROOT_CA = "/Users/madding/output/mad_root_ca";
 
     public static void main(String[] args) throws Exception {
         createNewRootChain();
