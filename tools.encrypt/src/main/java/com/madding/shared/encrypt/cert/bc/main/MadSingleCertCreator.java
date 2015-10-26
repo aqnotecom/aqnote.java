@@ -1,5 +1,7 @@
 package com.madding.shared.encrypt.cert.bc.main;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -56,7 +58,7 @@ public class MadSingleCertCreator {
             bOut.write(SingleX509V1Creator.generate(certObject, pair).getEncoded());
             bOut.close();
             InputStream in = new ByteArrayInputStream(bOut.toByteArray());
-            CertificateFactory fact = CertificateFactory.getInstance("X.509", "BC");
+            CertificateFactory fact = CertificateFactory.getInstance("X.509", JCE_PROVIDER);
             X509Certificate x509Cert = (X509Certificate) fact.generateCertificate(in);
             System.out.println(x509Cert);
             System.out.println("issuer: " + x509Cert.getIssuerX500Principal());

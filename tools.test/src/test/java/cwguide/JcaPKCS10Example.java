@@ -1,5 +1,8 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.ALG_SIG_SHA256_RSA;
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.Security;
@@ -29,9 +32,9 @@ public class JcaPKCS10Example
     {
         Security.addProvider(new BouncyCastleProvider());
 
-        String sigName = "SHA1withRSA";
+        String sigName = ALG_SIG_SHA256_RSA;
 
-        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA", "BC");
+        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA", JCE_PROVIDER);
 
         kpg.initialize(1024);
 
@@ -54,9 +57,9 @@ public class JcaPKCS10Example
 
         requestBuilder.addAttribute(PKCSObjectIdentifiers.pkcs_9_at_extensionRequest, extGen.generate());
 
-        PKCS10CertificationRequest req1 = requestBuilder.build(new JcaContentSignerBuilder(sigName).setProvider("BC").build(kp.getPrivate()));
+        PKCS10CertificationRequest req1 = requestBuilder.build(new JcaContentSignerBuilder(sigName).setProvider(JCE_PROVIDER).build(kp.getPrivate()));
 
-        if (req1.isSignatureValid(new JcaContentVerifierProviderBuilder().setProvider("BC").build(kp.getPublic())))
+        if (req1.isSignatureValid(new JcaContentVerifierProviderBuilder().setProvider(JCE_PROVIDER).build(kp.getPublic())))
         {
             System.out.println(sigName + ": PKCS#10 request verified.");
         }

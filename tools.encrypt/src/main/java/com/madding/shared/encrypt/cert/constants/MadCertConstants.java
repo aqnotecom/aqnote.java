@@ -1,5 +1,7 @@
 package com.madding.shared.encrypt.cert.constants;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 /**
  * 类MadCertConstants.java的实现描述：证书常量
  * 
@@ -7,6 +9,6 @@ package com.madding.shared.encrypt.cert.constants;
  */
 public interface MadCertConstants {
 
-    public static final String BC_JCE     = "BC";
+    public static final String BC_JCE     = JCE_PROVIDER;
     public static final String SHA256_RSA = "SHA256WithRSAEncryption";
 }

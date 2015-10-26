@@ -18,7 +18,7 @@ public class DisableCertValidation {
         sc.init(null, trustAllCerts, new java.security.SecureRandom());
         HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
 
-        new URL("https://login.alibaba-inc.com/ssoLogin.htm");
+        new URL("https://www.alipay.com");
     }
 
     public static class MyX509TrustManager implements X509TrustManager {

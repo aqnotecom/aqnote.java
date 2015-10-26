@@ -1,5 +1,8 @@
 package com.madding.shared.test.cert;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.ALG_SIG_SHA256_RSA;
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -41,7 +44,7 @@ public class CertificateChainDemo {
     public String keyStorePath = "/home/madding/output/create_cert/root_intranet.keystore";
    
     public String userDN = "E=madding.lilp@gmail.com, CN=madding.lip, OU=Corp ,O=MAD, L=HangZhou, ST=ZheJiang, C=CN";
-    public String userAlias = "madding.lip@alibaba-inc.com";    // 用户别名
+    public String userAlias = "madding.lip@gmail.com";    // 用户别名
     
     public CertificateChainDemo() {
     }
@@ -69,8 +72,8 @@ public class CertificateChainDemo {
             System.out.println("\nuser public key:\n" + KPair.getPublic());
             JcaX509v3CertificateBuilder certBuilder = new JcaX509v3CertificateBuilder(new X500Name(caDN), BigInteger.valueOf(1), new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis() + (1000L * 60 * 60 * 24 * 365)), new X500Name(userDN), KPair.getPublic());
                             
-            X509CertificateHolder certHolder = certBuilder.build(new JcaContentSignerBuilder("SHA1WithRSA").setProvider("BC").build(KPair.getPrivate()));
-            X509Certificate cert = new JcaX509CertificateConverter().setProvider("BC").getCertificate(certHolder);
+            X509CertificateHolder certHolder = certBuilder.build(new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(KPair.getPrivate()));
+            X509Certificate cert = new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certHolder);
 
             cert.checkValidity(new Date());
             cert.verify(KPair.getPublic());

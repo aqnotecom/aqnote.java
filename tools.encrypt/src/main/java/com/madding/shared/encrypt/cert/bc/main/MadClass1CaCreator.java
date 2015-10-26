@@ -26,14 +26,14 @@ import com.madding.shared.encrypt.cert.gen.MadBCCertGenerator;
  */
 public class MadClass1CaCreator implements MadBCConstant {
 
-    public static String MAD_CLASS1_CA = "/home/madding/output/mad_class1_ca";
+    public static String MAD_CLASS1_CA = "/Users/madding/output/mad_class1_ca";
 
     public static void main(String[] args) throws Exception {
         createNewChain();
 
         PKCS12PfxPdu pfx = MadPKCSReader.readPKCS12(new FileInputStream(MAD_CLASS1_CA + P12_SUFFIX), USER_CERT_PASSWD);
         System.out.println(pfx.toASN1Structure());
-        readByKeyStore(MAD_CLASS1_CA);
+        readByKeyStore(MAD_CLASS1_CA + P12_SUFFIX);
     }
 
     protected static void createExistChain() throws Exception {
@@ -79,7 +79,7 @@ public class MadClass1CaCreator implements MadBCConstant {
     }
 
     protected static void readByKeyStore(String ca) throws Exception {
-        KeyStore pkcs12Store = KeyStore.getInstance("PKCS12", "BC");
+        KeyStore pkcs12Store = KeyStore.getInstance("PKCS12", JCE_PROVIDER);
 
         pkcs12Store.load(new FileInputStream(ca), USER_CERT_PASSWD);
 

@@ -1,5 +1,8 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.ALG_SIG_SHA256_RSA;
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -23,7 +26,7 @@ public class JcaBasicCRMFExample
     {
         Security.addProvider(new BouncyCastleProvider());
 
-        KeyPairGenerator kGen = KeyPairGenerator.getInstance("RSA", "BC");
+        KeyPairGenerator kGen = KeyPairGenerator.getInstance("RSA", JCE_PROVIDER);
 
         kGen.initialize(512);
 
@@ -33,13 +36,13 @@ public class JcaBasicCRMFExample
 
         certReqBuild.setPublicKey(kp.getPublic())
                     .setSubject(new X500Principal("CN=Test"))
-                    .setProofOfPossessionSigningKeySigner(new JcaContentSignerBuilder("SHA1withRSA").setProvider("BC").build(kp.getPrivate()));
+                    .setProofOfPossessionSigningKeySigner(new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(kp.getPrivate()));
 
         JcaCertificateRequestMessage certReqMsg = new JcaCertificateRequestMessage(certReqBuild.build().getEncoded());
 
         // check that internal check on popo signing is working okay
 
-        if (certReqMsg.isValidSigningKeyPOP(new JcaContentVerifierProviderBuilder().setProvider("BC").build(kp.getPublic())))
+        if (certReqMsg.isValidSigningKeyPOP(new JcaContentVerifierProviderBuilder().setProvider(JCE_PROVIDER).build(kp.getPublic())))
         {
             System.out.println("CRMF message verified");
         }

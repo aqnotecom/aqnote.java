@@ -18,7 +18,7 @@ import org.bouncycastle.openssl.PEMWriter;
 public class CertUtilTest {
 
     public static void main(String[] args) throws MalformedURLException {
-            Certificate[] certs = CertUtil.getServerCertList(new URL("https://login.alibaba-inc.com"));
+            Certificate[] certs = CertUtil.getServerCertList(new URL("https://www.alipay.com"));
             int i = 0;
             for (Certificate cer : certs) {
                 System.out.println(cer);

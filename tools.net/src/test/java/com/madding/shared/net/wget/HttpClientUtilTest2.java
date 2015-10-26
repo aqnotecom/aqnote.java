@@ -16,9 +16,7 @@ public class HttpClientUtilTest2 {
 
     public static void main(String[] args) {
         HttpClientUtil.initHttpClient(true);
-//        String response = HttpClientUtil.get("https://login-test.alibaba-inc.com", Charset.UTF_8);
-//        String response = HttpClientUtil.get("https://login.alibaba-inc.com", Charset.UTF_8);
-        String response = HttpClientUtil.get("https://alilang.alibaba-inc.com", Charset.UTF_8);
+        String response = HttpClientUtil.get("https://www.alipay.com", Charset.UTF_8);
         System.out.println(response);
     }
 }

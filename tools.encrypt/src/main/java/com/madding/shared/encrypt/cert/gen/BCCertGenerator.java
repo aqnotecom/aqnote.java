@@ -274,7 +274,7 @@ public class BCCertGenerator implements MadBCConstant {
                                                                                      + MadDateConstant.ONE_YEAR),
                                                                             pkcs10CSR.getSubject(), keyInfo);
 
-        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA1_RSA).setProvider(JCE_PROVIDER).build(pKeyPair.getPrivate());
+        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(pKeyPair.getPrivate());
         X509Certificate signedCert = new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBuilder.build(signer));
         signedCert.verify(pKeyPair.getPublic());
 
@@ -324,7 +324,7 @@ public class BCCertGenerator implements MadBCConstant {
     }
 
     private static X509Certificate signCert(X509v3CertificateBuilder certBuilder, PrivateKey pPrivKey) throws Exception {
-        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA1_RSA).setProvider(JCE_PROVIDER).build(pPrivKey);
+        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(pPrivKey);
         return new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBuilder.build(signer));
     }
 }

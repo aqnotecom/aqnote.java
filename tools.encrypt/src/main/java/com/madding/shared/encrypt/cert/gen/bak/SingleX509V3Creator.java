@@ -47,7 +47,7 @@ public class SingleX509V3Creator implements MadBCConstant {
                                                                             | KeyUsage.keyEncipherment));
             certBuilder.addExtension(Extension.subjectAlternativeName, false,
                                      new GeneralNames(new GeneralName(GeneralName.rfc822Name, "trust_device")));
-            ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA1_RSA).setProvider(JCE_PROVIDER).build(keyPair.getPrivate());
+            ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(keyPair.getPrivate());
             return new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBuilder.build(signer));
         } catch (CertificateEncodingException e) {
             throw new MadCertException(e);

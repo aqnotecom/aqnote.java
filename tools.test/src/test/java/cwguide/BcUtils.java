@@ -1,5 +1,8 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.ALG_SIG_SHA256_RSA;
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.security.cert.CertPathBuilder;
@@ -78,7 +81,7 @@ public class BcUtils
                  new X500Name("CN=Test Root Certificate"),
                  SubjectPublicKeyInfoFactory.createSubjectPublicKeyInfo(keyPair.getPublic()));
 
-        AlgorithmIdentifier sigAlg = algFinder.find("SHA1withRSA");
+        AlgorithmIdentifier sigAlg = algFinder.find(ALG_SIG_SHA256_RSA);
         AlgorithmIdentifier digAlg = new DefaultDigestAlgorithmIdentifierFinder().find(sigAlg);
 
         ContentSigner signer = new BcRSAContentSignerBuilder(sigAlg, digAlg).build(keyPair.getPrivate());
@@ -109,7 +112,7 @@ public class BcUtils
                 .addExtension(Extension.basicConstraints, true, new BasicConstraints(0))
                 .addExtension(Extension.keyUsage, true, new KeyUsage(KeyUsage.digitalSignature | KeyUsage.keyCertSign | KeyUsage.cRLSign));
 
-        AlgorithmIdentifier sigAlg = algFinder.find("SHA1withRSA");
+        AlgorithmIdentifier sigAlg = algFinder.find(ALG_SIG_SHA256_RSA);
         AlgorithmIdentifier digAlg = new DefaultDigestAlgorithmIdentifierFinder().find(sigAlg);
 
         ContentSigner signer = new BcRSAContentSignerBuilder(sigAlg, digAlg).build(caKey);
@@ -213,7 +216,7 @@ public class BcUtils
         CertStore certsAndCRLs)
         throws Exception
     {
-        CertPathBuilder       builder = CertPathBuilder.getInstance("PKIX", "BC");
+        CertPathBuilder       builder = CertPathBuilder.getInstance("PKIX", JCE_PROVIDER);
         PKIXBuilderParameters buildParams = new PKIXBuilderParameters(Collections.singleton(new TrustAnchor(rootCert, null)), endConstraints);
 
         buildParams.addCertStore(certsAndCRLs);

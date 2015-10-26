@@ -68,7 +68,7 @@ public class ClientCustomSSL {
             Scheme sch = new Scheme("https", 443, socketFactory);
             httpclient.getConnectionManager().getSchemeRegistry().register(sch);
 
-            HttpGet httpget = new HttpGet("https://login.alibaba-inc.com/rpc/oauth/verify.json");
+            HttpGet httpget = new HttpGet("https://www.alipay.com");
 
             System.out.println("executing request" + httpget.getRequestLine());
 

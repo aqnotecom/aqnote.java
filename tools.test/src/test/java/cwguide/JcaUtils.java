@@ -1,5 +1,8 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.ALG_SIG_SHA256_RSA;
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -83,9 +86,9 @@ public class JcaUtils
                  new X500Name("CN=Test Root Certificate"),
                  keyPair.getPublic());
 
-        ContentSigner signer = new JcaContentSignerBuilder("SHA1withRSA").setProvider("BC").build(keyPair.getPrivate());
+        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(keyPair.getPrivate());
 	
-	    return new JcaX509CertificateConverter().setProvider("BC").getCertificate(certBldr.build(signer));
+	    return new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBldr.build(signer));
 	}
     
     /**
@@ -109,9 +112,9 @@ public class JcaUtils
                 .addExtension(Extension.basicConstraints, true, new BasicConstraints(0))
                 .addExtension(Extension.keyUsage, true, new KeyUsage(KeyUsage.digitalSignature | KeyUsage.keyCertSign | KeyUsage.cRLSign));
 
-        ContentSigner signer = new JcaContentSignerBuilder("SHA1withRSA").setProvider("BC").build(caKey);
+        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(caKey);
 
-        return new JcaX509CertificateConverter().setProvider("BC").getCertificate(certBldr.build(signer));
+        return new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBldr.build(signer));
     }
     
     /**
@@ -135,9 +138,9 @@ public class JcaUtils
                 .addExtension(Extension.basicConstraints, true, new BasicConstraints(false))
                 .addExtension(Extension.keyUsage, true, new KeyUsage(KeyUsage.digitalSignature | KeyUsage.keyEncipherment));
 
-        ContentSigner signer = new JcaContentSignerBuilder("SHA1withRSA").setProvider("BC").build(caKey);
+        ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(caKey);
 
-        return new JcaX509CertificateConverter().setProvider("BC").getCertificate(certBldr.build(signer));
+        return new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBldr.build(signer));
 	}
 
     /**
@@ -146,7 +149,7 @@ public class JcaUtils
     public static KeyPair generateRSAKeyPair()
         throws Exception
     {
-        KeyPairGenerator kpGen = KeyPairGenerator.getInstance("RSA", "BC");
+        KeyPairGenerator kpGen = KeyPairGenerator.getInstance("RSA", JCE_PROVIDER);
 
         kpGen.initialize(2048, new SecureRandom());
 
@@ -223,7 +226,7 @@ public class JcaUtils
         CertStore certsAndCRLs)
         throws Exception
     {
-        CertPathBuilder       builder = CertPathBuilder.getInstance("PKIX", "BC");
+        CertPathBuilder       builder = CertPathBuilder.getInstance("PKIX", JCE_PROVIDER);
         PKIXBuilderParameters buildParams = new PKIXBuilderParameters(Collections.singleton(new TrustAnchor(rootCert, null)), endConstraints);
 
         buildParams.addCertStore(certsAndCRLs);

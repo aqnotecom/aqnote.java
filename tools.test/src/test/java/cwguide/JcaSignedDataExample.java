@@ -1,5 +1,7 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Security;
@@ -41,7 +43,7 @@ public class JcaSignedDataExample
         X509Certificate rootCert)
         throws Exception
     {
-        CertStore certsAndCRLs = new JcaCertStoreBuilder().setProvider("BC").addCertificates(signedData.getCertificates()).build();
+        CertStore certsAndCRLs = new JcaCertStoreBuilder().setProvider(JCE_PROVIDER).addCertificates(signedData.getCertificates()).build();
         SignerInformationStore signers = signedData.getSignerInfos();
         Iterator<?> it = signers.getSigners().iterator();
 
@@ -54,7 +56,7 @@ public class JcaSignedDataExample
 
             PKIXCertPathBuilderResult result = JcaUtils.buildPath(rootCert, signerConstraints, certsAndCRLs);
 
-            return signer.verify(new JcaSimpleSignerInfoVerifierBuilder().setProvider("BC")
+            return signer.verify(new JcaSimpleSignerInfoVerifierBuilder().setProvider(JCE_PROVIDER)
                                  .build((X509Certificate)result.getCertPath().getCertificates().get(0)));
         }
         
@@ -76,7 +78,7 @@ public class JcaSignedDataExample
         // set up the generator
         CMSSignedDataGenerator gen = new CMSSignedDataGenerator();
 
-        gen.addSignerInfoGenerator(new JcaSimpleSignerInfoGeneratorBuilder().setProvider("BC").build("SHA256withRSA", key, cert));
+        gen.addSignerInfoGenerator(new JcaSimpleSignerInfoGeneratorBuilder().setProvider(JCE_PROVIDER).build("SHA256withRSA", key, cert));
         gen.addCertificates(certs);
         
         // create the signed-data object

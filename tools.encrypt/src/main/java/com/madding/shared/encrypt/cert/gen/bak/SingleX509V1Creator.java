@@ -36,7 +36,7 @@ public class SingleX509V1Creator implements MadBCConstant {
                                                                                    new X500Name(certObject.getSubject()),
                                                                                    keyPair.getPublic());
 
-            ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA1_RSA).setProvider(JCE_PROVIDER).build(keyPair.getPrivate());
+            ContentSigner signer = new JcaContentSignerBuilder(ALG_SIG_SHA256_RSA).setProvider(JCE_PROVIDER).build(keyPair.getPrivate());
             return new JcaX509CertificateConverter().setProvider(JCE_PROVIDER).getCertificate(certBuilder.build(signer));
         } catch (CertificateEncodingException e) {
             throw new MadCertException(e);

@@ -13,6 +13,7 @@ public interface MadBCConstant {
     public static final String DES_EDE3_CBC       = "DES-EDE3-CBC";
     public static final String SHA1_RSA           = "SHA1WithRSAEncryption";
     public static final String SHA256_RSA         = "SHA256WithRSAEncryption";
+    // @depression
     public static final String ALG_SIG_SHA1_RSA   = "SHA1withRSA";
     public static final String ALG_SIG_SHA256_RSA = "SHA256withRSA";
 

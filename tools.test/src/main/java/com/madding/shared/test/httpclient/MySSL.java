@@ -15,8 +15,8 @@ import javax.net.ssl.TrustManager;
 
 public class MySSL {
     public static void main(String[] args) throws Exception {
-        String host = "login.alibaba-inc.com";
-        String url = "/rpc/oauth/verify.json";
+        String host = "www.alipay.com";
+        String url = "/";
         SSLContext ctx = SSLContext.getInstance("TLS");
         ctx.init(new KeyManager[0], new TrustManager[] { new DefaultTrustManager() }, new SecureRandom());
         SSLContext.setDefault(ctx);

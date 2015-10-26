@@ -27,7 +27,7 @@ public class TestHTTPUtil {
 		Map<String, String> postdatas = new HashMap<String, String>();
 		postdatas.put("1", "2");
 		
-		String response = HTTPUtil.retrieve("https://login.alibaba-inc.com/", postdatas);
+		String response = HTTPUtil.retrieve("https://www.alipay.com/", postdatas);
 		
 		System.out.println(response);
 		

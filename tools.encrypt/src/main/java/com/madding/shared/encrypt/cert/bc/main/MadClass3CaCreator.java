@@ -20,7 +20,7 @@ import com.madding.shared.encrypt.cert.gen.MadBCCertGenerator;
  */
 public class MadClass3CaCreator implements MadBCConstant {
 
-    public static final String MAD_CLASS3_CA = "/home/madding/output/mad_class3_ca";
+    public static final String MAD_CLASS3_CA = "/Users/madding/output/mad_class3_ca";
 
     public static void main(String[] args) throws Exception {
         createNewChain();

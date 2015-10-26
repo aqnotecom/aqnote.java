@@ -3,6 +3,8 @@
  */
 package com.madding.shared.encrypt;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -38,7 +40,7 @@ import com.madding.shared.lang.StringUtil;
 public class Blowfish {
 
 	private static final String CIPHER_NAME = "Blowfish/CBC/PKCS5Padding";
-	private static final String PROVIDER_NAME = "BC";
+	private static final String PROVIDER_NAME = JCE_PROVIDER;
 	private static final String DEFAULT_KEY = "www.aqnote.com";
 	private static final String DEFAULT_CHARSET = "UTF-8";
 	private static Cipher encryptCipher = null;

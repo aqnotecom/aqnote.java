@@ -22,8 +22,7 @@ public class SSLDebugTest {
     public static void scene_trustmanager() {
         System.getProperties().setProperty("javax.net.debug", "ssl,handshake,data,trustmanager");
         HttpClientUtil.initHttpClient(true);
-        // String response = HttpClientUtil.get("https://login.alibaba-inc.com", Charset.UTF_8);
-        String response = HttpClientUtil.get("https://alilang.alibaba-inc.com", Charset.UTF_8);
+        String response = HttpClientUtil.get("https://www.alipay.com", Charset.UTF_8);
         System.out.println(response);
     }
 
@@ -40,8 +39,7 @@ public class SSLDebugTest {
 //        System.getProperties().setProperty("javax.net.debug", "ssl");
 
         HttpClientUtil.initHttpClient(false);
-        String response = HttpClientUtil.get("https://login.alibaba-inc.com", Charset.UTF_8);
-        // String response = HttpClientUtil.get("https://alilang.alibaba-inc.com", Charset.UTF_8);
+        String response = HttpClientUtil.get("https://www.alipay.com", Charset.UTF_8);
         System.out.println(response);
     }
 }

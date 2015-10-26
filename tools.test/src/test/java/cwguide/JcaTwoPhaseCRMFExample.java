@@ -1,5 +1,7 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -22,7 +24,7 @@ public class JcaTwoPhaseCRMFExample
     {
         Security.addProvider(new BouncyCastleProvider());
 
-        KeyPairGenerator kGen = KeyPairGenerator.getInstance("RSA", "BC");
+        KeyPairGenerator kGen = KeyPairGenerator.getInstance("RSA", JCE_PROVIDER);
 
         kGen.initialize(512);
 

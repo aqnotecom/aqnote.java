@@ -9,7 +9,7 @@ public class HTTPSClient {
     public static void main(String[] args) throws Exception {
         
         System.setProperty("java.protocol.handler.pkgs", "com.sun.net.ssl.internal.www.protocol");
-        URL url = new URL("https://login.alibaba-inc.com/");
+        URL url = new URL("https://www.alipay.com/");
         BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 
         String line;

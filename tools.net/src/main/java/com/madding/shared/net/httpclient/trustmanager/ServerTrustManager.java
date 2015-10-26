@@ -12,17 +12,17 @@ import java.security.cert.X509Certificate;
 import javax.net.ssl.X509TrustManager;
 
 public class ServerTrustManager implements X509TrustManager {
-	Certificate alipayCert = null;
+	Certificate cert = null;
 
 	public ServerTrustManager() throws Exception {
 
 		InputStream ins = null;
 		CertificateFactory cerFactory = CertificateFactory.getInstance("X.509");
 		try {
-		    File crt = new File("/home/madding/certs/*.alibaba-inc.com");
+		    File crt = new File("/home/madding/certs/1.crt");
 			ins = new FileInputStream(crt);
 			// 读取证书
-			this.alipayCert = cerFactory.generateCertificate(ins);
+			this.cert = cerFactory.generateCertificate(ins);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -50,13 +50,13 @@ public class ServerTrustManager implements X509TrustManager {
 					|| cert.getSubjectDN().getName() == null) {
 				continue;
 			}
-			if (cert.getSubjectDN().getName().contains("alibaba-inc.com")) {
+			if (cert.getSubjectDN().getName().contains("mad")) {
 				// 验证时间有效性
 				cert.checkValidity();
 				// 验证签名
 
 				// try {
-				PublicKey pkey = this.alipayCert.getPublicKey();
+				PublicKey pkey = this.cert.getPublicKey();
 				PublicKey pkey2 = cert.getPublicKey();
 				if (pkey2.toString().equalsIgnoreCase(pkey.toString())) {
 					// return when verify success

@@ -1,5 +1,7 @@
 package cwguide;
 
+import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -63,7 +65,7 @@ public class JcePKCS12Example
         //
         // or alternately just load it up using a KeyStore
         //
-        KeyStore pkcs12Store = KeyStore.getInstance("PKCS12", "BC");
+        KeyStore pkcs12Store = KeyStore.getInstance("PKCS12", JCE_PROVIDER);
 
         pkcs12Store.load(new FileInputStream(file), JcaUtils.KEY_PASSWD);
 
@@ -107,13 +109,13 @@ public class JcePKCS12Example
 
         PKCS12PfxPduBuilder builder = new PKCS12PfxPduBuilder();
 
-        OutputEncryptor oKeyEncryptor = new JcePKCSPBEOutputEncryptorBuilder(NISTObjectIdentifiers.id_aes256_CBC).setProvider("BC").build(JcaUtils.KEY_PASSWD);
+        OutputEncryptor oKeyEncryptor = new JcePKCSPBEOutputEncryptorBuilder(NISTObjectIdentifiers.id_aes256_CBC).setProvider(JCE_PROVIDER).build(JcaUtils.KEY_PASSWD);
         PKCS12SafeBagBuilder keyBagBuilder = new JcaPKCS12SafeBagBuilder(key, oKeyEncryptor);
         keyBagBuilder.addBagAttribute(PKCS12SafeBag.friendlyNameAttribute, new DERBMPString("Eric's Key"));
         keyBagBuilder.addBagAttribute(PKCS12SafeBag.localKeyIdAttribute, pubKeyId);
         builder.addData(keyBagBuilder.build());
 
-        OutputEncryptor oCertEncryptor = new JcePKCSPBEOutputEncryptorBuilder(PKCSObjectIdentifiers.pbeWithSHAAnd40BitRC2_CBC).setProvider("BC").build(JcaUtils.KEY_PASSWD);
+        OutputEncryptor oCertEncryptor = new JcePKCSPBEOutputEncryptorBuilder(PKCSObjectIdentifiers.pbeWithSHAAnd40BitRC2_CBC).setProvider(JCE_PROVIDER).build(JcaUtils.KEY_PASSWD);
         builder.addEncryptedData(oCertEncryptor, new PKCS12SafeBag[]{eeCertBagBuilder.build(), caCertBagBuilder.build(), taCertBagBuilder.build()});
 
         PKCS12PfxPdu pfx = builder.build(new JcePKCS12MacCalculatorBuilder(OIWObjectIdentifiers.idSHA1), JcaUtils.KEY_PASSWD);
@@ -140,8 +142,8 @@ public class JcePKCS12Example
         Map<PrivateKey, ASN1Encodable> privKeyIds = new HashMap<PrivateKey, ASN1Encodable>();
 
         InputDecryptorProvider inputDecryptorProvider = new JcePKCSPBEInputDecryptorProviderBuilder()
-                                                              .setProvider("BC").build(JcaUtils.KEY_PASSWD);
-        JcaX509CertificateConverter  jcaConverter = new JcaX509CertificateConverter().setProvider("BC");
+                                                              .setProvider(JCE_PROVIDER).build(JcaUtils.KEY_PASSWD);
+        JcaX509CertificateConverter  jcaConverter = new JcaX509CertificateConverter().setProvider(JCE_PROVIDER);
 
         for (int i = 0; i != infos.length; i++)
         {
@@ -183,7 +185,7 @@ public class JcePKCS12Example
                 PKCS8EncryptedPrivateKeyInfo encInfo = (PKCS8EncryptedPrivateKeyInfo)bags[0].getBagValue();
                 PrivateKeyInfo info = encInfo.decryptPrivateKeyInfo(inputDecryptorProvider);
 
-                KeyFactory keyFact = KeyFactory .getInstance(info.getPrivateKeyAlgorithm().getAlgorithm().getId(), "BC");
+                KeyFactory keyFact = KeyFactory .getInstance(info.getPrivateKeyAlgorithm().getAlgorithm().getId(), JCE_PROVIDER);
                 PrivateKey privKey = keyFact.generatePrivate(new PKCS8EncodedKeySpec(info.getEncoded()));
 
                 Attribute[] attributes = bags[0].getAttributes();
