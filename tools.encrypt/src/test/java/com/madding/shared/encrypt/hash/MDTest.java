@@ -14,8 +14,8 @@ import junit.framework.TestCase;
 public class MDTest extends TestCase {
 
     public void test() {
-        // 18057129798
-        System.out.println(MD.md5("13675815985"));
-        System.out.println(MD.md5("13675815986"));
+        System.out.println(MD.md2("13675815985"));  // 32bit
+        System.out.println(MD.md4("13675815985"));  // 32bit
+        System.out.println(MD.md5("13675815985"));  // 32bit
     }
 }

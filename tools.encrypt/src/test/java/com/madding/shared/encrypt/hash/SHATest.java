@@ -25,6 +25,8 @@ public class SHATest extends TestCase {
         System.out.println(SHA.sha256("13675815985"));      // 64bit BC
         System.out.println(SHA.sha384("13675815985"));      // 96bit
         System.out.println(SHA.sha512("13675815985"));      // 128bit
+        System.out.println(SHA.sha512_224("13675815985"));  // 56bit
+        System.out.println(SHA.sha512_256("13675815985"));  // 64bit
         
         // SHA3
         System.out.println(SHA.sha3_224("13675815985"));    // 56bit BC
