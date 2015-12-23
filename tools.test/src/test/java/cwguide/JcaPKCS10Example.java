@@ -22,6 +22,8 @@ import org.bouncycastle.pkcs.PKCS10CertificationRequest;
 import org.bouncycastle.pkcs.PKCS10CertificationRequestBuilder;
 import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequestBuilder;
 
+import com.madding.shared.encrypt.selector.ProviderUtil;
+
 /**
  * A simple example showing generation and verification of a PKCS#10 request.
  */
@@ -30,7 +32,7 @@ public class JcaPKCS10Example
     public static void main(String[] args)
             throws Exception
     {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
 
         String sigName = ALG_SIG_SHA256_RSA;
 

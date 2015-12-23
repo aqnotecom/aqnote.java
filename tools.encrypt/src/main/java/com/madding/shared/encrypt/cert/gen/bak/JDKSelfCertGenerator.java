@@ -9,13 +9,16 @@ import java.security.KeyStore;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
-import java.security.Security;
 import java.security.SignatureException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Date;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import com.madding.shared.encrypt.ProviderUtil;
+import com.madding.shared.encrypt.cert.exception.MadCertException;
+import com.madding.shared.encrypt.cert.self.tool.X509CertTool;
+import com.madding.shared.encrypt.cert.self.util.KeyStoreUtil;
+import com.madding.shared.encrypt.cert.self.util.X500NameUtil;
 
 import sun.security.x509.AlgorithmId;
 import sun.security.x509.CertAndKeyGen;
@@ -34,11 +37,6 @@ import sun.security.x509.X500Name;
 import sun.security.x509.X509CertImpl;
 import sun.security.x509.X509CertInfo;
 
-import com.madding.shared.encrypt.cert.exception.MadCertException;
-import com.madding.shared.encrypt.cert.self.tool.X509CertTool;
-import com.madding.shared.encrypt.cert.self.util.KeyStoreUtil;
-import com.madding.shared.encrypt.cert.self.util.X500NameUtil;
-
 /**
  * 证书创建工厂,用于处理证书的创建工作
  * 
@@ -54,7 +52,7 @@ public class JDKSelfCertGenerator {
     private static ThreadLocal<JDKSelfCertGenerator> threadlocal        = new ThreadLocal<JDKSelfCertGenerator>();
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
     }
 
     public static JDKSelfCertGenerator getIns() {

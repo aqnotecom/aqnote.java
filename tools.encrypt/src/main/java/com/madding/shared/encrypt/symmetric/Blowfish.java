@@ -11,7 +11,6 @@ import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
-import java.security.Security;
 import java.security.spec.AlgorithmParameterSpec;
 
 import javax.crypto.BadPaddingException;
@@ -22,8 +21,8 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.lang.StringUtil;
 
 /**
@@ -53,7 +52,7 @@ public class Blowfish {
 	}
 
 	private static void generateCipher(String rawKey) {
-		Security.addProvider(new BouncyCastleProvider());
+	    ProviderUtil.addBCProvider();
 		encryptCipher = instanceCipher(CIPHER_NAME, PROVIDER_NAME);
 		decryptCipher = instanceCipher(CIPHER_NAME, PROVIDER_NAME);
 		key = generateKey(rawKey);

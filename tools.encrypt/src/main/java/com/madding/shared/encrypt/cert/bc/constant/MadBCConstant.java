@@ -1,5 +1,7 @@
 package com.madding.shared.encrypt.cert.bc.constant;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 /**
  * 类MadBCConstant.java的实现描述：TODO 类实现描述
  * 
@@ -7,7 +9,7 @@ package com.madding.shared.encrypt.cert.bc.constant;
  */
 public interface MadBCConstant {
 
-    public static final String JCE_PROVIDER       = "BC";
+    public static final String JCE_PROVIDER       = BouncyCastleProvider.PROVIDER_NAME;
     public static final String ALG_RSA            = "RSA";
     public static final String KEY_STORE_TYPE     = "PKCS12";
     public static final String DES_EDE3_CBC       = "DES-EDE3-CBC";

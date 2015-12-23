@@ -14,6 +14,8 @@ import org.bouncycastle.cert.crmf.jcajce.JcaCertificateRequestMessage;
 import org.bouncycastle.cert.crmf.jcajce.JcaCertificateRequestMessageBuilder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+import com.madding.shared.encrypt.selector.ProviderUtil;
+
 /**
  * Basic example of CRMF which tells a CA to send the certificate back encrypted.
  */
@@ -22,7 +24,7 @@ public class JcaTwoPhaseCRMFExample
     public static void main(String[] args)
         throws Exception
     {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
 
         KeyPairGenerator kGen = KeyPairGenerator.getInstance("RSA", JCE_PROVIDER);
 

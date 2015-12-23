@@ -1,7 +1,7 @@
 /*
  * Copyright madding.me.
  */
-package com.madding.shared.encrypt;
+package com.madding.shared.encrypt.util;
 
 /**
  * 类Encrypt.java的实现描述：TODO 类实现描述 

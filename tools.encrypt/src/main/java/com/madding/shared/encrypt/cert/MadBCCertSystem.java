@@ -3,15 +3,14 @@ package com.madding.shared.encrypt.cert;
 import static com.madding.shared.encrypt.cert.gen.BCCertGenerator.getIns;
 
 import java.security.KeyPair;
-import java.security.Security;
 import java.security.cert.X509Certificate;
 import java.util.Map;
 
 import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.encrypt.cert.bc.cover.MadPKCSTransformer;
 import com.madding.shared.encrypt.cert.bc.loader.MadCaCertLoader;
 import com.madding.shared.encrypt.cert.bc.util.KeyPairUtil;
@@ -28,7 +27,7 @@ public class MadBCCertSystem {
     public static final Logger logger = LoggerFactory.getLogger(MadBCCertSystem.class);
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
     }
 
     // 颁发证书

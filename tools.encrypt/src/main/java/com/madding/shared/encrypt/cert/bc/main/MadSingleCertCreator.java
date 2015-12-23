@@ -8,15 +8,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyPair;
 import java.security.NoSuchProviderException;
-import java.security.Security;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Date;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.encrypt.cert.bc.util.KeyPairUtil;
 import com.madding.shared.encrypt.cert.dataobject.MadCertificateObject;
 import com.madding.shared.encrypt.cert.exception.MadCertException;
@@ -37,7 +35,7 @@ public class MadSingleCertCreator {
     public static final String SUBJECT_Pattern    = "C=CN,  ST=ZheJiang,  L=HangZhou,  O=Mad,  OU=Inc,  CN={0},  Email={1}";
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
     }
 
     public static void create() throws MadCertException {

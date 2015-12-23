@@ -48,13 +48,15 @@ import org.bouncycastle.pkcs.jcajce.JcePKCSPBEInputDecryptorProviderBuilder;
 import org.bouncycastle.pkcs.jcajce.JcePKCSPBEOutputEncryptorBuilder;
 import org.bouncycastle.util.io.Streams;
 
+import com.madding.shared.encrypt.selector.ProviderUtil;
+
 public class JcePKCS12Example
 {
     public static final String file = "/home/madding/output/id.p12";
     public static void main(String[] args)
         throws Exception
     {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
 
         KeyStore credentials = JcaUtils.createCredentials();
         PrivateKey key = (PrivateKey)credentials.getKey(JcaUtils.END_ENTITY_ALIAS, JcaUtils.KEY_PASSWD);

@@ -1,4 +1,4 @@
-package com.madding.shared.encrypt.md;
+package com.madding.shared.encrypt.hash;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

@@ -11,7 +11,6 @@ import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.security.Security;
 import java.security.cert.X509Certificate;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Date;
@@ -46,13 +45,13 @@ import org.bouncycastle.cert.jcajce.JcaX509ExtensionUtils;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.crypto.params.RSAKeyParameters;
 import org.bouncycastle.crypto.util.PublicKeyFactory;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.bouncycastle.pkcs.PKCS10CertificationRequest;
 import org.bouncycastle.pkcs.PKCS10CertificationRequestBuilder;
 import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequestBuilder;
 
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.encrypt.cert.bc.constant.MadBCConstant;
 import com.madding.shared.encrypt.cert.bc.constant.MadCertConstant;
 import com.madding.shared.encrypt.cert.bc.constant.MadDateConstant;
@@ -80,7 +79,7 @@ public class BCCertGenerator implements MadBCConstant {
     protected static int                        END_KEY_USAGE   = KeyUsage.digitalSignature | KeyUsage.keyEncipherment;
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
 
         BASE_EKU[0] = KeyPurposeId.id_kp_clientAuth;
         BASE_EKU[1] = KeyPurposeId.id_kp_serverAuth;

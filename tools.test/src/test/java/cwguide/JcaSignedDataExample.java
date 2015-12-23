@@ -28,6 +28,8 @@ import org.bouncycastle.cms.jcajce.JcaX509CertSelectorConverter;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.Store;
 
+import com.madding.shared.encrypt.selector.ProviderUtil;
+
 /**
  * JCA example of generating a detached signature.
  */
@@ -66,7 +68,7 @@ public class JcaSignedDataExample
     public static void main(String[] args)
         throws Exception
     {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
 
         KeyStore        credentials = JcaUtils.createCredentials();
         PrivateKey      key = (PrivateKey)credentials.getKey(JcaUtils.END_ENTITY_ALIAS, JcaUtils.KEY_PASSWD);

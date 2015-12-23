@@ -3,13 +3,12 @@ package com.madding.shared.encrypt.cert.bc.loader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyPair;
-import java.security.Security;
 import java.security.cert.X509Certificate;
 
 import org.apache.commons.lang.StringUtils;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import com.madding.shared.charset.Charset;
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.encrypt.cert.bc.cover.MadPKCSReader;
 import com.madding.shared.lang.ClassLoaderUtil;
 import com.madding.shared.lang.StreamUtil;
@@ -22,7 +21,7 @@ import com.madding.shared.lang.StreamUtil;
 public class MadCaCertLoader {
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
     }
 
     private static final String    CA_CRT_FILE         = "META-INF/mad.ca/mad_root_ca.crt";

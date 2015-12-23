@@ -5,17 +5,15 @@ import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
-import java.security.Security;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.encrypt.cert.bc.constant.MadBCConstant;
 import com.madding.shared.encrypt.cert.exception.MadCertException;
 
 public class KeyPairUtil implements MadBCConstant {
     
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
     }
 
     /**

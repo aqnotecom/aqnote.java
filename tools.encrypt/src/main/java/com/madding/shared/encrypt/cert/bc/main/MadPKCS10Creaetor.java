@@ -3,13 +3,12 @@ package com.madding.shared.encrypt.cert.bc.main;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.security.KeyPair;
-import java.security.Security;
 import java.security.cert.X509Certificate;
 
 import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.pkcs.PKCS10CertificationRequest;
 
+import com.madding.shared.encrypt.ProviderUtil;
 import com.madding.shared.encrypt.cert.bc.constant.MadBCConstant;
 import com.madding.shared.encrypt.cert.bc.cover.MadPKCSReader;
 import com.madding.shared.encrypt.cert.bc.cover.MadPKCSWriter;
@@ -25,7 +24,7 @@ public class MadPKCS10Creaetor implements MadBCConstant {
     public static final String MAD_CLASS1_END_VPN = "/home/madding/output/mad_class1_end_vpn_csr_1";
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
+        ProviderUtil.addBCProvider();
     }
     
     public static void main(String[] args) throws Exception {

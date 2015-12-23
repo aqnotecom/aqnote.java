@@ -19,7 +19,7 @@ import cryptix.provider.Cryptix;
  * 
  * @author madding.lip Jun 9, 2014 1:04:08 PM
  */
-public class ProviderOpr {
+public class ProviderTest {
 
     public static void listSysProviders() {
         Provider[] providers = Security.getProviders();
@@ -51,7 +51,7 @@ public class ProviderOpr {
 
     public static void main(String[] args) {
         printProvider(new BouncyCastleProvider());
-        printProvider(new Cryptix());
+//        printProvider(new Cryptix());
 //        listSysProviders();
 //        addProvider(new BouncyCastleProvider());
 //        addProvider(new Cryptix());
