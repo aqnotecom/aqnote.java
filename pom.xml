@@ -428,7 +428,6 @@
 	<modules>
 		<module>tools.encrypt</module>
 		<module>tools.image</module>
-		<module>tools.doc</module>
 		<module>tools.lang</module>
 		<module>tools.btrace</module>
 		<module>tools.net</module>
