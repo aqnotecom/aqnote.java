@@ -3,10 +3,10 @@
  */
 package com.madding.shared.encrypt;
 
+import com.madding.shared.encrypt.symmetric.Blowfish;
+
 import junit.framework.Assert;
 import junit.framework.TestCase;
-
-import com.madding.shared.encrypt.Blowfish;
 
 /**
  * 类BlowfishTest.java的实现描述：blowfish测试

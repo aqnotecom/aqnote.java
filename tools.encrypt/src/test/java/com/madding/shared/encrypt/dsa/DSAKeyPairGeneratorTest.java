@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
-import com.madding.shared.encrypt.dsa.DSAKPGen;
+import com.madding.shared.encrypt.asymmetric.dsa.DSAKPGen;
 
 import junit.framework.TestCase;
 

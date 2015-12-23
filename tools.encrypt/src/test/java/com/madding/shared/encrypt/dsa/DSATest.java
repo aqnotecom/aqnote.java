@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 import junit.framework.TestCase;
 
-import com.madding.shared.encrypt.dsa.DSA;
+import com.madding.shared.encrypt.asymmetric.dsa.DSA;
 import com.madding.shared.lang.StreamUtil;
 import com.madding.shared.lang.StringUtil;
 

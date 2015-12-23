@@ -3,6 +3,8 @@
  */
 package com.madding.shared.encrypt;
 
+import com.madding.shared.encrypt.symmetric.DES;
+
 import junit.framework.Assert;
 import junit.framework.TestCase;
 

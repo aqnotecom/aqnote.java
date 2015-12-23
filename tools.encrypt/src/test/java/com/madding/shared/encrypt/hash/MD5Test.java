@@ -3,7 +3,7 @@
  */
 package com.madding.shared.encrypt.hash;
 
-import com.madding.shared.encrypt.hash.MD5;
+import com.madding.shared.encrypt.md.MD5;
 
 import junit.framework.TestCase;
 

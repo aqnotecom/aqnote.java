@@ -434,13 +434,13 @@
 		<module>tools.net</module>
 		<module>tools.bugs</module>
 		<module>tools.hadoop</module>
-		<module>tools.nodejs</module>
 		<module>tools.javacc</module>
 		<module>tools.maven</module>
-        <module>tools.test</module>
-        <module>tools.designpattern</module>
-        <module>tools.protocol</module>
-        <module>tools.components</module>
+    <module>tools.test</module>
+    <module>tools.designpattern</module>
+    <module>tools.protocol</module>
+    <module>tools.components</module>
+    <module>tools.datastructure</module>
   </modules>
 
 	<build>

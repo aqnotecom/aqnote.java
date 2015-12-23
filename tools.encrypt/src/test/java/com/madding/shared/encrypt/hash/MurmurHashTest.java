@@ -7,6 +7,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 import com.madding.shared.encrypt.hash.MurmurHashTest.Node;
+import com.madding.shared.encrypt.md.MurmurHash;
 
 @SuppressWarnings("hiding")
 public class MurmurHashTest<Node> { // S类封装了机器节点的信息 ，如name、password、ip、port等

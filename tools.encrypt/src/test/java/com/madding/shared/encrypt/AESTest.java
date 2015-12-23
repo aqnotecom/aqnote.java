@@ -5,7 +5,7 @@ package com.madding.shared.encrypt;
 
 import java.io.UnsupportedEncodingException;
 
-import com.madding.shared.encrypt.AES;
+import com.madding.shared.encrypt.symmetric.AES;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
