@@ -16,15 +16,20 @@ import junit.framework.TestCase;
  */
 public class SHATest extends TestCase {
     public void test() {
+        // SHA1
         System.out.println(SHA.sha("13675815985"));         // 40bit
         System.out.println(SHA.sha1("13675815985"));        // 40bit
-        System.out.println(SHA.sha3_224("13675815985"));    // 56bit BC
+        
+        // SHA2
         System.out.println(SHA.sha224("13675815985"));      // 56bit BC
-        System.out.println(SHA.sha3_256("13675815985"));    // 64bit BC
         System.out.println(SHA.sha256("13675815985"));      // 64bit BC
         System.out.println(SHA.sha384("13675815985"));      // 96bit
         System.out.println(SHA.sha512("13675815985"));      // 128bit
         
+        // SHA3
+        System.out.println(SHA.sha3_224("13675815985"));    // 56bit BC
+        System.out.println(SHA.sha3_256("13675815985"));    // 64bit BC
+        System.out.println(SHA.sha3_384("13675815985"));    // 96bit BC
         
     }
 }

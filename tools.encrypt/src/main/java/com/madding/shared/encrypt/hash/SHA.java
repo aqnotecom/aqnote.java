@@ -20,6 +20,8 @@ import com.madding.shared.encrypt.util.Hex;
 public class SHA {
 
     public static final String  DEFAULT_CHARSET = "UTF-8";
+    
+    //////SHA1 ////////////////////////////////////////////////////
 
     // return 40bit
     public final static String sha(String src) {
@@ -61,6 +63,56 @@ public class SHA {
             e.printStackTrace();
         }
         return "";
+    }
+    
+    //////SHA2 ////////////////////////////////////////////////////
+    
+    // return 56bit
+    public final static String sha224(String src) {
+        try {
+            return sha224(src.getBytes(DEFAULT_CHARSET));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    
+    public final static String sha224(byte[] src) {
+        ProviderUtil.addBCProvider();
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-224", MadBCConstant.JCE_PROVIDER);
+            md.update(src);
+            return new String(Hex.encodeHex(md.digest()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchProviderException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    // return 64bit
+    public final static String sha256(String src) {
+        try {
+            return sha256(src.getBytes(DEFAULT_CHARSET));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    
+    public final static String sha256(byte[] src) {
+        ProviderUtil.addBCProvider();
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256", MadBCConstant.JCE_PROVIDER);
+            md.update(src);
+            return new String(Hex.encodeHex(md.digest()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchProviderException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
     
     // return 96bit
@@ -105,53 +157,9 @@ public class SHA {
         return null;
     }
     
-    // return 64bit
-    public final static String sha256(String src) {
-        try {
-            return sha256(src.getBytes(DEFAULT_CHARSET));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
     
-    public final static String sha256(byte[] src) {
-        ProviderUtil.addBCProvider();
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256", MadBCConstant.JCE_PROVIDER);
-            md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+    ////// SHA3 ////////////////////////////////////////////////////
     
-    // return 56bit
-    public final static String sha224(String src) {
-        try {
-            return sha224(src.getBytes(DEFAULT_CHARSET));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
-    
-    public final static String sha224(byte[] src) {
-        ProviderUtil.addBCProvider();
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-224", MadBCConstant.JCE_PROVIDER);
-            md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
     
     // return 56bit
     public final static String sha3_224(String src) {
@@ -191,6 +199,30 @@ public class SHA {
         ProviderUtil.addBCProvider();
         try {
             MessageDigest md = MessageDigest.getInstance("SHA3-256", MadBCConstant.JCE_PROVIDER);
+            md.update(src);
+            return new String(Hex.encodeHex(md.digest()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchProviderException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    // return 96bit
+    public final static String sha3_384(String src) {
+        try {
+            return sha3_384(src.getBytes(DEFAULT_CHARSET));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    
+    public final static String sha3_384(byte[] src) {
+        ProviderUtil.addBCProvider();
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA3-384", MadBCConstant.JCE_PROVIDER);
             md.update(src);
             return new String(Hex.encodeHex(md.digest()));
         } catch (NoSuchAlgorithmException e) {
