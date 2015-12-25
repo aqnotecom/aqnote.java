@@ -16,13 +16,23 @@
 
 #### update ####
 --------------------------------------------------------------
-**version 0.1.0**
-
+**version 0.2.0**
+ 
  TODO:
+
+ * add More MD to tools.encrypt
 
 ----------------------------------------
 
-**version 1.0.0**
+**version 0.1.0**
+
+  * remove tools.nodejs 
+  * remove tools.doc to docs
+  * add SHA1-3 MD2、4、5  SM\* to tools.encrypt
+
+----------------------------------------
+
+**version 0.0.1**
 
 the init version contain the follow sub project:  
   * tools.btrace				  --- for save the btrace for business
