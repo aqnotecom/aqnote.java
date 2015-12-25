@@ -17,9 +17,13 @@
 #### update ####
 --------------------------------------------------------------
 **version 0.1.0**
+
  TODO:
 
+----------------------------------------
+
 **version 1.0.0**
+
 the init version contain the follow sub project:  
   * tools.btrace				  --- for save the btrace for business
   *	tools.bugs					  --- for simulate the bugs
