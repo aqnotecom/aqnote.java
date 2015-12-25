@@ -10,9 +10,7 @@ import java.security.Security;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-
-import cryptix.provider.Cryptix;
+import sun.security.pkcs11.SunPKCS11;
 
 /**
  * ProviderOpr.java desc：provider信息查询
@@ -20,8 +18,12 @@ import cryptix.provider.Cryptix;
  * @author madding.lip Jun 9, 2014 1:04:08 PM
  */
 public class ProviderTest {
+    
+    static {
+        Security.addProvider(new SunPKCS11());
+    }
 
-    public static void listSysProviders() {
+    public static void listProviders() {
         Provider[] providers = Security.getProviders();
         for (int i = 0; i < providers.length; i++) {
             printProvider(providers[i]);
@@ -50,11 +52,18 @@ public class ProviderTest {
     }
 
     public static void main(String[] args) {
-        printProvider(new BouncyCastleProvider());
+        printProvider(new SunPKCS11(, "/Library/Java/Home/jre/lib/security/java.security"));
+        
+//        printProvider(new BouncyCastleProvider());
 //        printProvider(new Cryptix());
-//        listSysProviders();
+        
+        
+        
+//        listProviders();
+        
+        
 //        addProvider(new BouncyCastleProvider());
 //        addProvider(new Cryptix());
-//        listSysProviders();
+//        listProviders();
     }
 }

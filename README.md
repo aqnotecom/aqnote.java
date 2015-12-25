@@ -1,7 +1,6 @@
-java-tools
-================
+### java-tools ###
 
-develop
+#### develop ####
 -------------------------------------------------------------
 
 1.install
@@ -15,27 +14,27 @@ develop
  if you want to add some tools or fix bugs,the follow path is need for you
  > tools.doc/src/main/resources/templates
 
-update
+#### update ####
 --------------------------------------------------------------
-### version 0.1.0
+**version 0.1.0**
  TODO:
 
-### version 1.0.0
- the init version contain the follow sub project:<br />
-		tools.btrace				--- for save the btrace for business<br />
-		tools.bugs					--- for simulate the bugs<br />
-		tools.components			--- no relation with business components<br />
-		tools.designpattern			--- use code to description design pattern<br />
-		tools.doc					--- document relation to this project<br />
-		tools.encrypt				--- about the cryptology code<br />
-		tools.hadoop				--- usefull map reduce code<br />
-		tools.image					--- relation to graphics or image<br />
-		tools.javacc				--- for create language<br />
-		tools.lang					--- lang tools<br/>
-		tools.maven				--- maven plugins<br />
-		tools.net					--- for socket or net code<br />
-		tools.nodejs				--- nodejs<br />
-		tools.protocol				--- relation to IEEE or ISO net protocol<br />
-		tools.test					--- for project code test<br />
+**version 1.0.0**
+the init version contain the follow sub project:  
+  * tools.btrace				  --- for save the btrace for business
+  *	tools.bugs					  --- for simulate the bugs
+  * tools.components			--- no relation with business components
+  *	tools.designpattern		--- use code to description design pattern
+  *	tools.doc					    --- document relation to this project
+  * tools.encrypt				  --- about the cryptology code
+  * tools.hadoop				  --- usefull map reduce code
+  * tools.image					  --- relation to graphics or image
+  * tools.javacc				  --- for create language
+  * tools.lang					  --- lang tools
+  * tools.maven			  	  --- maven plugins
+  * tools.net					    --- for socket or net code
+  * tools.nodejs				  --- nodejs
+  * tools.protocol				--- relation to IEEE or ISO net protocol
+  * tools.test					  --- for project code test
 
 
