@@ -20,10 +20,11 @@ public class MetaClassLoader extends ClassLoader {
 
         byte[] classData = null;
         try {
-            FileInputStream f = new FileInputStream(classpath);
-            int num = f.available();
+            FileInputStream fis = new FileInputStream(classpath);
+            int num = fis.available();
             classData = new byte[num];
-            f.read(classData);
+            fis.read(classData);
+            if (fis != null) fis.close();
         } catch (IOException e) {
             System.out.println(e);
         }

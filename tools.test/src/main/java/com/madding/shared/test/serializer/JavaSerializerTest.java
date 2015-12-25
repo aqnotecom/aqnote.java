@@ -53,5 +53,6 @@ public class JavaSerializerTest {
         InputStream is=new FileInputStream(f);
         ObjectInputStream ois=new ObjectInputStream(is);
         System.out.println(ois.readObject());
+        if(ois != null) ois.close();
     }
 }

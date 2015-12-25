@@ -162,7 +162,7 @@ public class NCRTools {
 
         ArrayList<String> vec = new ArrayList<String>();
 
-        for (int i = 0; st.hasMoreTokens(); i++) {
+        while (st.hasMoreTokens()) {
             String t = st.nextToken();
 
             if ((t != null) && (t.length() > 0)) {
@@ -197,13 +197,6 @@ public class NCRTools {
         }
 
         return res;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("run this is 1==" + mumChangeNCR2GB("&#37038;&#20214;&#27169;&#29256;&#27979;&#35797;&#39033;&#30446;1833"));
-        System.out.println("run this is 1==" + mumChangeNCR2GB("濟南吉宇&#183;勛業代理銷售有限公司"));
-        System.out.println("change ncr==" + singChangeGB2NCR("'"));
-        System.out.println("change ncr==" + singChangeGB2NCR("mm"));
     }
 
 }

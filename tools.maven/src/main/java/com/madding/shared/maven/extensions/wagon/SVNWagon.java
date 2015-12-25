@@ -248,6 +248,12 @@ public class SVNWagon extends AbstractWagon {
                 lock = channel.lock( 0L, Long.MAX_VALUE, false );
             } catch ( IOException e ) {
                 throw new TransferFailedException( e.getMessage(), e );
+            } finally {
+                if(fos != null) try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             try {

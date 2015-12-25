@@ -46,7 +46,7 @@ public class SitemapGen {
             op.lastMod(new Date());
             addUrl(op.build());
         }
-
+        if(br != null) br.close();
         finish();
     }
 

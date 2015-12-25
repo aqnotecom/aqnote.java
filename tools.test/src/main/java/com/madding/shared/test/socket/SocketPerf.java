@@ -1,6 +1,10 @@
 package com.madding.shared.test.socket;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -15,18 +19,22 @@ public class SocketPerf {
             System.out.println(i + " " + socket.toString());
 
             Thread.sleep(1);
+
+            OutputStream ostream = socket.getOutputStream();
+
+            String message = "HTTP 1.1";
+            ostream.write(message.getBytes());
+
+            InputStream istream = socket.getInputStream();
+            InputStreamReader istreamReader = new InputStreamReader(istream);
+            BufferedReader br = new BufferedReader(istreamReader);
+            System.out.println(br.readLine());
+
+            if (istream != null) {
+                ostream.close();
+            }
+            socket.close();
         }
-        // OutputStream ostream = socket.getOutputStream();
-        //
-        // String message = "HTTP 1.1";
-        // ostream.write(message.getBytes());
-        //
-        // InputStream istream = socket.getInputStream();
-        // DataInputStream distream = new DataInputStream(istream);
-        // System.out.println(distream.readLine());
-        //
-        // if (istream != null) {
-        // ostream.close();
-        // }
+
     }
 }
