@@ -5,7 +5,6 @@ import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROV
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
-import java.security.Security;
 
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.asn1.x500.X500Name;
@@ -15,14 +14,13 @@ import org.bouncycastle.asn1.x509.Extension;
 import org.bouncycastle.asn1.x509.ExtensionsGenerator;
 import org.bouncycastle.asn1.x509.GeneralName;
 import org.bouncycastle.asn1.x509.GeneralNames;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.bouncycastle.operator.jcajce.JcaContentVerifierProviderBuilder;
 import org.bouncycastle.pkcs.PKCS10CertificationRequest;
 import org.bouncycastle.pkcs.PKCS10CertificationRequestBuilder;
 import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequestBuilder;
 
-import com.madding.shared.encrypt.selector.ProviderUtil;
+import com.madding.shared.encrypt.ProviderUtil;
 
 /**
  * A simple example showing generation and verification of a PKCS#10 request.

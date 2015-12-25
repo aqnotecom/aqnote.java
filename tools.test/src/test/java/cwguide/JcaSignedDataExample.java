@@ -4,7 +4,6 @@ import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROV
 
 import java.security.KeyStore;
 import java.security.PrivateKey;
-import java.security.Security;
 import java.security.cert.CertStore;
 import java.security.cert.Certificate;
 import java.security.cert.PKIXCertPathBuilderResult;
@@ -25,10 +24,9 @@ import org.bouncycastle.cms.SignerInformationStore;
 import org.bouncycastle.cms.jcajce.JcaSimpleSignerInfoGeneratorBuilder;
 import org.bouncycastle.cms.jcajce.JcaSimpleSignerInfoVerifierBuilder;
 import org.bouncycastle.cms.jcajce.JcaX509CertSelectorConverter;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.Store;
 
-import com.madding.shared.encrypt.selector.ProviderUtil;
+import com.madding.shared.encrypt.ProviderUtil;
 
 /**
  * JCA example of generating a detached signature.

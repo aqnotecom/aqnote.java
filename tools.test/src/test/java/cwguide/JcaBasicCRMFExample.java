@@ -6,17 +6,15 @@ import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROV
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
-import java.security.Security;
 
 import javax.security.auth.x500.X500Principal;
 
 import org.bouncycastle.cert.crmf.jcajce.JcaCertificateRequestMessage;
 import org.bouncycastle.cert.crmf.jcajce.JcaCertificateRequestMessageBuilder;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.bouncycastle.operator.jcajce.JcaContentVerifierProviderBuilder;
 
-import com.madding.shared.encrypt.selector.ProviderUtil;
+import com.madding.shared.encrypt.ProviderUtil;
 
 /**
  * Basic example of CRMF using a signature for proof-of-possession

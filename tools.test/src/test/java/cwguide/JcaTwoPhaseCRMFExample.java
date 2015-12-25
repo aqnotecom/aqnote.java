@@ -5,16 +5,14 @@ import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROV
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
-import java.security.Security;
 
 import javax.security.auth.x500.X500Principal;
 
 import org.bouncycastle.asn1.crmf.SubsequentMessage;
 import org.bouncycastle.cert.crmf.jcajce.JcaCertificateRequestMessage;
 import org.bouncycastle.cert.crmf.jcajce.JcaCertificateRequestMessageBuilder;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-import com.madding.shared.encrypt.selector.ProviderUtil;
+import com.madding.shared.encrypt.ProviderUtil;
 
 /**
  * Basic example of CRMF which tells a CA to send the certificate back encrypted.

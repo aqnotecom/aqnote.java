@@ -52,7 +52,7 @@ public class ProviderTest {
     }
 
     public static void main(String[] args) {
-        printProvider(new SunPKCS11(, "/Library/Java/Home/jre/lib/security/java.security"));
+//        printProvider(new SunPKCS11(, "/Library/Java/Home/jre/lib/security/java.security"));
         
 //        printProvider(new BouncyCastleProvider());
 //        printProvider(new Cryptix());
