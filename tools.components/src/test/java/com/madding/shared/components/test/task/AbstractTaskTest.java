@@ -96,8 +96,12 @@ public class AbstractTaskTest extends AbstractTask {
                         System.out.println("produce " + lineStr);
                         lineStr = br.readLine();
                     }
+                    if (br != null) br.close();
+                    if (in != null) in.close();
                 } catch (IOException e) {
                     logger.error("", e);
+                } finally {
+
                 }
             } else {
                 logger.error("error:the file not exist!");

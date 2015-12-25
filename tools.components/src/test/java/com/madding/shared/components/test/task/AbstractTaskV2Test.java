@@ -63,7 +63,7 @@ public class AbstractTaskV2Test extends AbstractTaskV2 {
     public void produceTimer() {
         Timer timer = new Timer("Timer - produce", true);
         timer.schedule(new AutoProduceRunnable(), FIRST_TIME);
-       
+
         return;
     }
 
@@ -97,6 +97,8 @@ public class AbstractTaskV2Test extends AbstractTaskV2 {
                         System.out.println("produce " + lineStr);
                         lineStr = br.readLine();
                     }
+                    if (br != null) br.close();
+                    if (in != null) in.close();
                 } catch (IOException e) {
                     logger.error("", e);
                 }

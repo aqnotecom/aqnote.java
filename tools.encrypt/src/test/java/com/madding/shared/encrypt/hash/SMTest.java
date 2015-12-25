@@ -10,6 +10,8 @@ package com.madding.shared.encrypt.hash;
 
 import java.io.UnsupportedEncodingException;
 
+import org.apache.commons.lang.StringUtils;
+import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
@@ -23,6 +25,10 @@ import junit.framework.TestCase;
 public class SMTest extends TestCase {
 
     public void test01() throws UnsupportedEncodingException {
+        System.out.println(SM.sm3("13675815986")); // 64bit
         System.out.println(SM._sm3("13675815985".getBytes("UTF-8")));   // 64bit
+        
+        Assert.assertTrue(StringUtils.equalsIgnoreCase(SM.sm3("13675815985".getBytes("UTF-8")), SM._sm3("13675815985".getBytes("UTF-8"))));
+        Assert.assertTrue(StringUtils.equalsIgnoreCase(SM.sm3("13675815985"), SM._sm3("13675815985".getBytes("UTF-8"))));
     }
 }
