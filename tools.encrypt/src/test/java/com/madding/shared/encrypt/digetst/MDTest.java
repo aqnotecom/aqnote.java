@@ -1,9 +1,9 @@
 /*
  * Copyright madding.me.
  */
-package com.madding.shared.encrypt.hash;
+package com.madding.shared.encrypt.digetst;
 
-import com.madding.shared.encrypt.hash.MD;
+import com.madding.shared.encrypt.digest.MD;
 
 import junit.framework.TestCase;
 

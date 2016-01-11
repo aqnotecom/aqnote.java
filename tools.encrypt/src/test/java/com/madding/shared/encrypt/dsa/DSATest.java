@@ -32,7 +32,7 @@ public class DSATest extends TestCase {
         String context = "{username:madding, password:madding, sign:1234563298}";
         String dsaContext = dsa.sign(context, "hello");
         System.out.println(dsaContext);
-        dsa.check(context, dsaContext, "hello");
+        dsa.verify(context, dsaContext, "hello");
     }
 
     private void initDSA(String keyPairName) throws Exception {

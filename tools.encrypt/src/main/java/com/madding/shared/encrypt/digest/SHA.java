@@ -1,7 +1,7 @@
 /*
  * Copyright madding.me.
  */
-package com.madding.shared.encrypt.hash;
+package com.madding.shared.encrypt.digest;
 
 import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
 import static com.madding.shared.lang.StringUtil.isBlank;
@@ -21,7 +21,7 @@ import org.bouncycastle.jcajce.provider.digest.SHA384;
 import org.bouncycastle.jcajce.provider.digest.SHA512;
 
 import com.madding.shared.encrypt.ProviderUtil;
-import com.madding.shared.encrypt.util.Hex;
+import com.madding.shared.encrypt.util.ByteUtil;
 
 /**
  * 类SHA.java的实现描述：定义SHA算法相关接口，范围：SHA1 SHA2 serial, SHA3
@@ -68,7 +68,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-1");
             MessageDigest md = MessageDigest.getInstance(OID_SHA1, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -82,7 +82,7 @@ public class SHA {
         if (src == null) return "";
         SHA1.Digest md = new SHA1.Digest();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     ////// SHA2 ////////////////////////////////////////////////////
@@ -105,7 +105,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-224", JCE_PROVIDER);
             MessageDigest md = MessageDigest.getInstance(OID_SHA2_224, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -119,7 +119,7 @@ public class SHA {
         if (src == null) return "";
         SHA224.Digest md = new SHA224.Digest();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 64bit
@@ -140,7 +140,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-256", JCE_PROVIDER);
             MessageDigest md = MessageDigest.getInstance(OID_SHA2_256, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -154,7 +154,7 @@ public class SHA {
         if (src == null) return "";
         SHA256.Digest md = new SHA256.Digest();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 96bit
@@ -175,7 +175,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-384");
             MessageDigest md = MessageDigest.getInstance(OID_SHA2_384, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -189,7 +189,7 @@ public class SHA {
         if (src == null) return "";
         SHA384.Digest md = new SHA384.Digest();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 128bit
@@ -210,7 +210,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-512");
             MessageDigest md = MessageDigest.getInstance(OID_SHA2_512, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -224,7 +224,7 @@ public class SHA {
         if (src == null) return "";
         SHA512.Digest md = new SHA512.Digest();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 56bit
@@ -245,7 +245,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-512/256");
             MessageDigest md = MessageDigest.getInstance(OID_SHA2_512_224, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -259,7 +259,7 @@ public class SHA {
         if (src == null) return "";
         SHA512.DigestT224 md = new SHA512.DigestT224();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 64bit
@@ -280,7 +280,7 @@ public class SHA {
             // MessageDigest md = MessageDigest.getInstance("SHA-512/256");
             MessageDigest md = MessageDigest.getInstance(OID_SHA2_512_256, JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -294,7 +294,7 @@ public class SHA {
         if (src == null) return "";
         SHA512.DigestT256 md = new SHA512.DigestT256();
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     ////// SHA3 ////////////////////////////////////////////////////
@@ -316,7 +316,7 @@ public class SHA {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA3-224", JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -330,7 +330,7 @@ public class SHA {
         if (src == null) return "";
         DigestSHA3 md = new DigestSHA3(224);
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
 
     }
 
@@ -350,7 +350,7 @@ public class SHA {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA3-256", JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -363,7 +363,7 @@ public class SHA {
         if (src == null) return "";
         DigestSHA3 md = new DigestSHA3(256);
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 96bit
@@ -383,7 +383,7 @@ public class SHA {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA3-384", JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -397,7 +397,7 @@ public class SHA {
         if (src == null) return "";
         DigestSHA3 md = new DigestSHA3(384);
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 
     // return 128bit
@@ -417,7 +417,7 @@ public class SHA {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA3-512", JCE_PROVIDER);
             md.update(src);
-            return new String(Hex.encodeHex(md.digest()));
+            return new String(ByteUtil.toHexBytes(md.digest()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchProviderException e) {
@@ -431,6 +431,6 @@ public class SHA {
         if (src == null) return "";
         DigestSHA3 md = new DigestSHA3(512);
         md.update(src);
-        return new String(Hex.encodeHex(md.digest()));
+        return new String(ByteUtil.toHexBytes(md.digest()));
     }
 }

@@ -1,4 +1,4 @@
-package com.madding.shared.encrypt.hash;
+package com.madding.shared.encrypt.digetst;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import com.madding.shared.encrypt.hash.MurmurHash;
-import com.madding.shared.encrypt.hash.MurmurHashTest.Node;
+import com.madding.shared.encrypt.digest.Murmur;
+import com.madding.shared.encrypt.digetst.MurmurHashTest.Node;
 
 @SuppressWarnings("hiding")
 public class MurmurHashTest<Node> { // S类封装了机器节点的信息 ，如name、password、ip、port等
@@ -73,7 +73,7 @@ public class MurmurHashTest<Node> { // S类封装了机器节点的信息 ，如
 
             for (int n = 0; n < NODE_NUM; n++)
                 // 一个真实机器节点关联NODE_NUM个虚拟节点
-                nodes.put(MurmurHash.hash("SHARD-" + shardInfo.name + "-NODE-" + n), shardInfo);
+                nodes.put(Murmur.hash("SHARD-" + shardInfo.name + "-NODE-" + n), shardInfo);
         }
     }
 
@@ -81,7 +81,7 @@ public class MurmurHashTest<Node> { // S类封装了机器节点的信息 ，如
     private void addS(Node s) {
         System.out.println("增加主机" + s + "的变化：");
         for (int n = 0; n < NODE_NUM; n++)
-            addS(MurmurHash.hash("SHARD-" + s.name + "-NODE-" + n), s);
+            addS(Murmur.hash("SHARD-" + s.name + "-NODE-" + n), s);
 
     }
 
@@ -121,8 +121,8 @@ public class MurmurHashTest<Node> { // S类封装了机器节点的信息 ，如
         System.out.println("删除主机" + s + "的变化：");
         for (int i = 0; i < NODE_NUM; i++) {
             // 定位s节点的第i的虚拟节点的位置
-            SortedMap<Long, Node> tail = nodes.tailMap(MurmurHash.hash("SHARD-" + s.name + "-NODE-" + i));
-            SortedMap<Long, Node> head = nodes.headMap(MurmurHash.hash("SHARD-" + s.name + "-NODE-" + i));
+            SortedMap<Long, Node> tail = nodes.tailMap(Murmur.hash("SHARD-" + s.name + "-NODE-" + i));
+            SortedMap<Long, Node> head = nodes.headMap(Murmur.hash("SHARD-" + s.name + "-NODE-" + i));
             Long begin = 0L;
             Long end = 0L;
 
@@ -156,12 +156,12 @@ public class MurmurHashTest<Node> { // S类封装了机器节点的信息 ，如
 
     // 映射key到真实节点
     public void keyToNode(String key) {
-        SortedMap<Long, Node> tail = nodes.tailMap(MurmurHash.hash(key)); // 沿环的顺时针找到一个虚拟节点
+        SortedMap<Long, Node> tail = nodes.tailMap(Murmur.hash(key)); // 沿环的顺时针找到一个虚拟节点
         if (tail.size() == 0) {
             return;
         }
-        treeKey.put(MurmurHash.hash(key), tail.get(tail.firstKey()));
-        System.out.println(key + "（hash：" + MurmurHash.hash(key) + "）连接到主机->" + tail.get(tail.firstKey()));
+        treeKey.put(Murmur.hash(key), tail.get(tail.firstKey()));
+        System.out.println(key + "（hash：" + Murmur.hash(key) + "）连接到主机->" + tail.get(tail.firstKey()));
     }
 
     static class Node {

@@ -25,7 +25,7 @@ import com.madding.shared.lang.StreamUtil;
  * 
  * @author madding.lip May 8, 2012 11:01:01 AM
  */
-public class DSAKPGen {
+public class DSAKeyPairGenTest {
 
     public static final Long   seed      = System.currentTimeMillis();
 

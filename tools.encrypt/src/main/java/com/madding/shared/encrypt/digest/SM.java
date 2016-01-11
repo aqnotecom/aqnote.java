@@ -6,7 +6,7 @@
  * under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation;
  */
-package com.madding.shared.encrypt.hash;
+package com.madding.shared.encrypt.digest;
 
 import static com.madding.shared.encrypt.cert.bc.constant.MadBCConstant.JCE_PROVIDER;
 
@@ -22,7 +22,9 @@ import org.bouncycastle.util.encoders.Hex;
 import com.madding.shared.encrypt.ProviderUtil;
 
 /**
- * SM.java desc：TODO 
+ * SM.java 
+ * 
+ * http://www.oscca.gov.cn/UpFile/20101222141857786.pdf 
  * @author madding.lip Dec 24, 2015 6:13:41 PM
  */
 public class SM {

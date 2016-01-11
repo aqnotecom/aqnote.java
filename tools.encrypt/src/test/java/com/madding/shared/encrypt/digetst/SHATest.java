@@ -3,7 +3,7 @@
  * <madding.lip@gmail.com>. This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
-package com.madding.shared.encrypt.hash;
+package com.madding.shared.encrypt.digetst;
 
 import junit.framework.TestCase;
 
@@ -13,6 +13,8 @@ import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
+
+import com.madding.shared.encrypt.digest.SHA;
 
 /**
  * SHATest.java desc：TODO
