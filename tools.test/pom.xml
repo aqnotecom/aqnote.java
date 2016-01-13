@@ -6,22 +6,17 @@
 	<parent>
 		<artifactId>tools.all</artifactId>
 		<groupId>com.madding.shared</groupId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.madding.shared</groupId>
 	<artifactId>tools.test</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>tools.test</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
 			<groupId>com.madding.shared</groupId>
 			<artifactId>tools.lang</artifactId>
-			<version>${pom.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.madding.shared</groupId>
-			<artifactId>tools.encrypt</artifactId>
 			<version>${pom.version}</version>
 		</dependency>
 
