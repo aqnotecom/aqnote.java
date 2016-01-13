@@ -5,11 +5,11 @@ import java.io.InputStream;
 import java.util.Locale;
 import java.util.Properties;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.madding.shared.lang.ClassLoaderUtil;
-import com.madding.shared.lang.StringUtil;
 
 
 /**
@@ -44,7 +44,7 @@ public class PropertiesFactory {
 
     protected static String getFilename(String enumClassName, Locale locale) {
 
-        if (StringUtil.isBlank(enumClassName) || locale == null) {
+        if (StringUtils.isBlank(enumClassName) || locale == null) {
             return null;
         }
         String path = enumClassName.replace('.', '/');

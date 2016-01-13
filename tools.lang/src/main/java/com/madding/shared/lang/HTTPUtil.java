@@ -26,6 +26,8 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.apache.commons.lang.StringUtils;
+
 public class HTTPUtil {
 
     public static final String QUESTION      = "?";
@@ -213,12 +215,12 @@ public class HTTPUtil {
      * @throws Exception
      */
     public static String encodeUrl(String urlStr) throws Exception {
-        if (StringUtil.isBlank(urlStr)) return urlStr;
+        if (StringUtils.isBlank(urlStr)) return urlStr;
         URL url = new URL(urlStr);
         String queryString = url.getQuery();
         String path = url.getPath();
         String encodePath = URLEncoder.encode(path, "UTF-8").replace("%2F", "/");
-        if (StringUtil.isNotBlank(queryString)) {
+        if (StringUtils.isNotBlank(queryString)) {
             Map<String, String> queries = splitQueryString(queryString);
             String newQueryString = "";
             for (String key : queries.keySet()) {
@@ -232,7 +234,7 @@ public class HTTPUtil {
             newQueryString = newQueryString.substring(1);
             urlStr = urlStr.replace(queryString, newQueryString);
         }
-        if (StringUtil.isNotBlank(path) && StringUtil.isNotBlank(encodePath)) {
+        if (StringUtils.isNotBlank(path) && StringUtils.isNotBlank(encodePath)) {
             urlStr = urlStr.replace(path, encodePath);
         }
         return urlStr;
@@ -255,7 +257,7 @@ public class HTTPUtil {
     }
 
     public static String replaceSpecialCharacters(String url) {
-        if (StringUtil.isBlank(url)) return url;
+        if (StringUtils.isBlank(url)) return url;
         else return url.replace(" ", "%20").replace("|", "%7C").replace("{", "%7B").replace("}", "%7D");
     }
 

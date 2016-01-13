@@ -21,11 +21,10 @@ public class SystemUtilTest {
         Collections.sort(list);
 
         for (Iterator i = list.iterator(); i.hasNext();) {
-            String key   = (String) i.next();
+            String key = (String) i.next();
             String value = System.getProperty(key);
 
-            System.out.println(key + " = "
-                + StringUtil.defaultIfNull(StringEscapeUtil.escapeJava(value), "[n/a]"));
+            System.out.println(key + " = " + StringUtil.defaultIfNull(StringEscapeUtil.escapeJava(value), "[n/a]"));
         }
     }
 }

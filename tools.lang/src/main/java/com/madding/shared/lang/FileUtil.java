@@ -7,6 +7,8 @@ import java.io.File;
 import java.net.URL;
 import java.util.StringTokenizer;
 
+import org.apache.commons.lang.StringUtils;
+
 /**
  * 类FileUtil.java的实现描述：处理文件的工具类
  * 
@@ -457,8 +459,8 @@ public class FileUtil {
         boolean endsWithSlash = path.endsWith(SLASH);
 
         // 按"/"分隔basedir和path
-        String[] baseParts = StringUtil.split(basedir.substring(basePrefix.length()), SLASH_CHAR);
-        String[] parts = StringUtil.split(path.substring(prefix.length()), SLASH_CHAR);
+        String[] baseParts = StringUtils.split(basedir.substring(basePrefix.length()), SLASH_CHAR);
+        String[] parts = StringUtils.split(path.substring(prefix.length()), SLASH_CHAR);
         StringBuffer buffer = new StringBuffer();
         int i = 0;
 
@@ -532,29 +534,29 @@ public class FileUtil {
      * @return 路径和后缀的数组
      */
     public static String[] parseExtension(String path) {
-        path = StringUtil.trimToEmpty(path);
+        path = StringUtils.trimToEmpty(path);
 
         String[] parts = { path, null };
 
-        if (StringUtil.isEmpty(path)) {
+        if (StringUtils.isEmpty(path)) {
             return parts;
         }
 
         // 如果找到后缀，则index >= 0，且extension != null（除非name以.结尾）
-        int index = StringUtil.lastIndexOf(path, EXTENSION_SEPARATOR);
+        int index = StringUtils.lastIndexOf(path, EXTENSION_SEPARATOR);
         String extension = null;
 
         if (index >= 0) {
-            extension = StringUtil.trimToNull(StringUtil.substring(path, index + 1));
+            extension = StringUtils.trimToNull(StringUtils.substring(path, index + 1));
 
-            if (!StringUtil.containsNone(extension, ALL_SLASH)) {
+            if (!StringUtils.containsNone(extension, ALL_SLASH)) {
                 extension = null;
                 index = -1;
             }
         }
 
         if (index >= 0) {
-            parts[0] = StringUtil.substring(path, 0, index);
+            parts[0] = StringUtils.substring(path, 0, index);
         }
 
         parts[1] = extension;

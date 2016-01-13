@@ -11,6 +11,8 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.BitSet;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.madding.shared.lang.internal.Entities;
 
 /**
@@ -976,7 +978,7 @@ public class StringEscapeUtil {
      * @see <a href="http://www.jguru.com/faq/view.jsp?EID=8881">faq</a>
      */
     public static String escapeSql(String str) {
-        return StringUtil.replace(str, "'", "''");
+        return StringUtils.replace(str, "'", "''");
     }
 
     /**
@@ -1005,7 +1007,7 @@ public class StringEscapeUtil {
             throw new IllegalArgumentException("The Writer must not be null");
         }
 
-        String result = StringUtil.replace(str, "'", "''");
+        String result = StringUtils.replace(str, "'", "''");
 
         if (result != null) {
             out.write(result);

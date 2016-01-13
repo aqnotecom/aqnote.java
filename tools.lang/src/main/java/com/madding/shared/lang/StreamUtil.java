@@ -16,6 +16,8 @@ import java.io.Writer;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.madding.shared.charset.Charset;
 
 /**
@@ -204,7 +206,7 @@ public class StreamUtil {
 
     public static InputStream bytes2Stream(String text, Charset charset) throws UnsupportedEncodingException {
         ByteArrayInputStream inputStream = null;
-        if (StringUtil.isBlank(text)) {
+        if (StringUtils.isBlank(text)) {
             return null;
         }
         byte[] bs = text.getBytes(charset.getCharset());

@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import org.apache.commons.lang.StringUtils;
+
 
 /**
  * 类SystemUtil.java的实现描述：
@@ -774,7 +776,7 @@ public class SystemUtil {
          * @since Java 1.1
          */
         public final String[] getClassPathArray() {
-            return StringUtil.split(getClassPath(), getOsInfo().getPathSeparator());
+            return StringUtils.split(getClassPath(), getOsInfo().getPathSeparator());
         }
 
         /**
@@ -819,7 +821,7 @@ public class SystemUtil {
          * @since Java 1.2
          */
         public final String[] getLibraryPathArray() {
-            return StringUtil.split(getLibraryPath(), getOsInfo().getPathSeparator());
+            return StringUtils.split(getLibraryPath(), getOsInfo().getPathSeparator());
         }
 
         /**
