@@ -1,6 +1,8 @@
-package com.madding.shared.misc;
+package com.madding.shared.test.misc;
 
 import java.lang.reflect.Field;
+
+import com.madding.shared.misc.UnsafeUtil;
 
 import sun.misc.Unsafe;
 

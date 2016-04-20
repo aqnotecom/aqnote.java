@@ -426,7 +426,6 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>tools.encrypt</module>
 		<module>tools.image</module>
 		<module>tools.lang</module>
 		<module>tools.btrace</module>
@@ -484,8 +483,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
           <compilerArgument>-XDignore.symbol.file</compilerArgument>
 				</configuration>
 			</plugin>
