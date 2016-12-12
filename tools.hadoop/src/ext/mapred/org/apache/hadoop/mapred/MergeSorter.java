@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.mapred;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.mapred;
 
 import java.util.Comparator;
 import org.apache.hadoop.io.IntWritable;
@@ -24,7 +28,11 @@ import org.apache.hadoop.io.SequenceFile.Sorter.RawKeyValueIterator;
 
 /** This class implements the sort method from BasicTypeSorterBase class as
  * MergeSort. Note that this class is really a wrapper over the actual
- * mergesort implementation that is there in the util package. The main intent
+ * mergesort implementation that is there in the util /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */. The main intent
  * of providing this class is to setup the input data for the util.MergeSort
  * algo so that the latter doesn't need to bother about the various data 
  * structures that have been created for the Map output but rather concentrate 

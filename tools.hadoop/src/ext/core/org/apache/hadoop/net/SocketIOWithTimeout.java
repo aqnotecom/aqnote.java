@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-package org.apache.hadoop.net;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.net;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -40,7 +44,11 @@ import org.apache.hadoop.util.StringUtils;
  * These streams can have a timeout.
  */
 abstract class SocketIOWithTimeout {
-  // This is intentionally package private.
+  // This is intentionally /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ private.
 
   static final Log LOG = LogFactory.getLog(SocketIOWithTimeout.class);    
   

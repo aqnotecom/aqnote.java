@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-package org.apache.hadoop.mapred.pipes;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.mapred.pipes;
 
 import java.io.IOException;
 import java.net.URI;
@@ -346,7 +350,11 @@ public class Submitter extends Configured implements Tool {
     }
     
     void printUsage() {
-      // The CLI package should do this for us, but I can't figure out how
+      // The CLI /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ should do this for us, but I can't figure out how
       // to make it print something reasonable.
       System.out.println("bin/hadoop pipes");
       System.out.println("  [-input <path>] // Input directory");

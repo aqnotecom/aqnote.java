@@ -15,12 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.classification;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.classification;
 
 import java.lang.annotation.Documented;
 
 /**
- * Annotation to inform users of how much to rely on a particular package,
+ * Annotation to inform users of how much to rely on a particular /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */,
  * class or method not changing over time.
  */
 @InterfaceAudience.Public

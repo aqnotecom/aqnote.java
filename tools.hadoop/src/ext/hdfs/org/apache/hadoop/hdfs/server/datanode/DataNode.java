@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.hdfs.server.datanode;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.hdfs.server.datanode;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
@@ -474,8 +478,20 @@ public class DataNode extends Configured
                                DataBlockScanner.Servlet.class);
 
     if (WebHdfsFileSystem.isEnabled(conf, LOG)) {
-      infoServer.addJerseyResourcePackage(DatanodeWebHdfsMethods.class
-          .getPackage().getName() + ";" + Param.class.getPackage().getName(),
+      infoServer.addJerseyResource/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */(DatanodeWebHdfsMethods.class
+          .get/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */().getName() + ";" + Param.class.get/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */().getName(),
           WebHdfsFileSystem.PATH_PREFIX + "/*");
     }
     this.infoServer.start();
@@ -513,7 +529,11 @@ public class DataNode extends Configured
   void registerMXBean(Configuration conf) {
     // We wrap to bypass standard mbean naming convention.
     // This wraping can be removed in java 6 as it is more flexible in 
-    // package naming for mbeans and their impl.
+    // /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ naming for mbeans and their impl.
     mxBean = MBeans.register("DataNode", "DataNodeInfo", this);
   }
   

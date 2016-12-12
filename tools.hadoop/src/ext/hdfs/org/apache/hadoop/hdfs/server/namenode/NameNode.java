@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.hdfs.server.namenode;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.hdfs.server.namenode;
 
 import java.io.File;
 import java.io.IOException;
@@ -369,10 +373,26 @@ public class NameNode implements ClientProtocol, DatanodeProtocol,
                     new String[]{pathSpec});
                 LOG.info("Added filter '" + name + "' (class=" + classname + ")");
 
-                // add webhdfs packages
-                addJerseyResourcePackage(
-                    NamenodeWebHdfsMethods.class.getPackage().getName()
-                    + ";" + Param.class.getPackage().getName(), pathSpec);
+                // add webhdfs /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */s
+                addJerseyResource/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */(
+                    NamenodeWebHdfsMethods.class.get/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */().getName()
+                    + ";" + Param.class.get/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */().getName(), pathSpec);
               }
             }
 

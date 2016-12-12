@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.madding.shared</groupId>
+	<groupId>com.aqnote.shared</groupId>
 	<artifactId>tools.all</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Authentication App Parent POM</name>
 	<description>Auto converted POM for Authentication Application</description>
 
@@ -13,6 +13,7 @@
 		<maven.test.skip>true</maven.test.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit_version>4.5</junit_version>
+		<mockito_version>1.10.19</mockito_version>
 		<apache_commons_codec>1.6</apache_commons_codec>
 		<apache_commons_io>2.1</apache_commons_io>
 		<apache_commons_daemon>1.0.1</apache_commons_daemon>
@@ -319,33 +320,38 @@
 			</dependency>
 
 			<!-- spring -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring</artifactId>
-                <version>${spring_framework_version}</version>
-            </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring</artifactId>
+          <version>${spring_framework_version}</version>
+      </dependency>
 
-            <!-- spring test -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring_framework_version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
-                <scope>test</scope>
-            </dependency>
+      <!-- spring test -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>${spring_framework_version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>commons-logging</groupId>
+                  <artifactId>commons-logging</artifactId>
+               </exclusion>
+           </exclusions>
+           <scope>test</scope>
+      </dependency>
 
-            <!-- junit -->
+      <!-- junit -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit_version}</version>
 				<scope>test</scope>
 			</dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>${mockito_version}</version>
+      </dependency>
 
 			<!-- servlet -->
 			<dependency>

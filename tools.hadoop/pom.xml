@@ -5,14 +5,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>tools.all</artifactId>
-		<groupId>com.madding.shared</groupId>
-		<version>1.0-SNAPSHOT</version>
+		<groupId>com.aqnote.shared</groupId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.madding.shared</groupId>
+	<groupId>com.aqnote.shared</groupId>
 	<artifactId>tools.hadoop</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>tools.hadoop</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.aqnote.com</url>
 
 	<dependencies>
 		<dependency>

@@ -17,6 +17,10 @@
  */
 @InterfaceAudience.LimitedPrivate({"HBase", "HDFS", "MapReduce"})
 @InterfaceStability.Evolving
-package org.apache.hadoop.metrics.util;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.metrics.util;
 import org.apache.hadoop.classification.InterfaceAudience;
 import org.apache.hadoop.classification.InterfaceStability;

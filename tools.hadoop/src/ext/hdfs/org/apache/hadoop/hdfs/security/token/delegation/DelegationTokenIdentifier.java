@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-package org.apache.hadoop.hdfs.security.token.delegation;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.hdfs.security.token.delegation;
 
 //import org.apache.hadoop.classification.InterfaceAudience;
 import org.apache.hadoop.io.Text;

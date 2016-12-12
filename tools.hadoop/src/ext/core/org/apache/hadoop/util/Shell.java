@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.util;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -103,8 +107,16 @@ abstract public class Shell {
    * to a given child process. This is only relevant when we are forking a
    * process from within the {@link org.apache.hadoop.mapred.Mapper} or the 
    * {@link org.apache.hadoop.mapred.Reducer} implementations 
-   * e.g. <a href="{@docRoot}/org/apache/hadoop/mapred/pipes/package-summary.html">Hadoop Pipes</a> 
-   * or <a href="{@docRoot}/org/apache/hadoop/streaming/package-summary.html">Hadoop Streaming</a>.
+   * e.g. <a href="{@docRoot}/org/apache/hadoop/mapred/pipes//*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */-summary.html">Hadoop Pipes</a> 
+   * or <a href="{@docRoot}/org/apache/hadoop/streaming//*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */-summary.html">Hadoop Streaming</a>.
    * 
    * It also checks to ensure that we are running on a *nix platform else 
    * (e.g. in Cygwin/Windows) it returns <code>null</code>.

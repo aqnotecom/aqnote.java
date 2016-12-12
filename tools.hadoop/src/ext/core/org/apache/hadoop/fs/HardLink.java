@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-package org.apache.hadoop.fs;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.fs;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -262,7 +266,11 @@ public class HardLink {
    */
   static class HardLinkCGWin extends HardLinkCommandGetter {
     //The Windows command getter impl class and its member fields are
-    //package-private ("default") access instead of "private" to assist 
+    ///*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */-private ("default") access instead of "private" to assist 
     //unit testing (sort of) on non-Win servers
 
     static String[] hardLinkCommand = {

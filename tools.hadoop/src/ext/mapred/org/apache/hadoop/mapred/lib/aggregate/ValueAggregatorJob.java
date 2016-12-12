@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-package org.apache.hadoop.mapred.lib.aggregate;
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ org.apache.hadoop.mapred.lib.aggregate;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,7 +50,11 @@ import org.apache.hadoop.util.GenericOptionsParser;
  * combine function). However, a lot of applications related to counting and
  * statistics computing have very similar characteristics. Aggregate abstracts
  * out the general patterns of these functions and implementing those patterns.
- * In particular, the package provides generic mapper/redducer/combiner classes,
+ * In particular, the /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ provides generic mapper/redducer/combiner classes,
  * and a set of built-in value aggregators, and a generic utility class that
  * helps user create map/reduce jobs using the generic class. The built-in
  * aggregators include:
@@ -62,7 +70,11 @@ import org.apache.hadoop.util.GenericOptionsParser;
  * generateKeyValPairs(Object key, Object value); public void
  * configure(JobConfjob); }
  * 
- * The package also provides a base class, ValueAggregatorBaseDescriptor,
+ * The /*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */ also provides a base class, ValueAggregatorBaseDescriptor,
  * implementing the above interface. The user can extend the base class and
  * implement generateKeyValPairs accordingly.
  * 
