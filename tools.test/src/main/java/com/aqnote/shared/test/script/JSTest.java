@@ -29,6 +29,7 @@ public class JSTest {
         test.test_invokeJSfile5();
         test.test_invokeJSfile6();
         test.test_invokeJSfile7();
+        test.test_invokeJSfile8();
     }
 
     public void init() {
@@ -92,7 +93,7 @@ public class JSTest {
         }
         System.out.println("=====================");
     }
-    
+
     public void test_invokeJSfile7() throws ScriptException, NoSuchMethodException {
         bindings.clear();
         bindings.put("stdout", System.out);
@@ -103,6 +104,43 @@ public class JSTest {
             System.out.println(result);
 
         }
+        System.out.println("=====================");
+    }
+
+    public void test_invokeJSfile8() throws ScriptException, NoSuchMethodException {
+        bindings.clear();
+        bindings.put("stdout", System.out);
+        long start = System.currentTimeMillis();
+        for(int i=0; i< 1000; i++) {
+            String script = "function execute() {"
+                    + "var QueryData = Java.type('com.aqnote.shared.test.script.QueryData');"
+                    + "var user = QueryData.getUser();"
+                    + "var session = QueryData.getSession();"
+                    + "var device = QueryData.getDevice();"
+                    + ""
+                    + "var result = true;"
+                    + "if(user.nick == \"" + i + "\") {"
+                    + "     result = result && false;"
+                    + "}"
+                    + ""
+                    + "if(session.isLogin == true) {"
+                    + "     result = result && true;"
+                    + "}"
+                    + ""
+                    + "if(device.type == \"android\") {"
+                    + "     result = result && true;"
+                    + "}"
+                    + ""
+                    + "return result;"
+                    + "}";
+            engine.eval(script);
+            if (engine instanceof Invocable) {
+                Invocable invoke = (Invocable) engine;
+                Boolean result = (Boolean) invoke.invokeFunction("execute", null);
+//                System.out.println(result);
+            }
+        }
+        System.out.println("cost:" + (System.currentTimeMillis() - start));
         System.out.println("=====================");
     }
 }
