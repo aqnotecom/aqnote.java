@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -20,7 +20,7 @@ import com.aqnote.shared.hadoop.offer.domain.OfferFeature;
 
 /**
  * 类MdpParseUtil.java的实现描述：TODO 类实现描述 
- * @author madding.lip Jun 28, 2012 1:22:32 PM
+ * @author Peng Li Jun 28, 2012 1:22:32 PM
  */
 public class MdpParseUtil {
     

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -14,7 +14,7 @@ import com.aqnote.shared.components.resultcode.ResultCodeComp;
 /**
  * 类MyResultCode.java的实现描述：提示外置枚举测试类
  * 
- * @author madding.lip Sep 17, 2013 5:25:32 PM
+ * @author Peng Li Sep 17, 2013 5:25:32 PM
  */
 enum MyResultCode implements IRichResultCode {
                                               AAA(0), BBB(1), CCC(2), DDD(3);

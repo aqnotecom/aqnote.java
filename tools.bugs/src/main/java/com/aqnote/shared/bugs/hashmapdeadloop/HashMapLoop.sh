@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# author: madding.lip
+# author: Peng Li
 # date: 2010.08.25
 # function: mutli call
 

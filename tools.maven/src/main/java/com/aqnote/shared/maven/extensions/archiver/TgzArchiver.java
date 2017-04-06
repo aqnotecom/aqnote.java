@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -25,7 +25,7 @@ import org.codehaus.plexus.context.ContextException;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Contextualizable;
 
 /**
- * @author <a href="mailto:madding.lip@gmail.co">madding.lip</a>
+ * @author <a href="mailto:Peng Li@gmail.co">Peng Li</a>
  */
 @SuppressWarnings("deprecation")
 public class TgzArchiver implements Archiver, Contextualizable {

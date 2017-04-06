@@ -11,7 +11,7 @@ package com.aqnote.shared.test.script;
 /**
  * Object1.java desc：TODO
  * 
- * @author madding.lip Jan 9, 2017 4:40:05 PM
+ * @author Peng Li Jan 9, 2017 4:40:05 PM
  */
 public class MyObject {
 

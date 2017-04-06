@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -8,7 +8,7 @@ package com.aqnote.shared.bugs.sleep;
 /**
  * 类Main.java的实现描述：线程常见操作理解
  * 
- * @author madding.lip Jun 21, 2012 2:38:46 PM
+ * @author Peng Li Jun 21, 2012 2:38:46 PM
  */
 public class ThreadOp {
 

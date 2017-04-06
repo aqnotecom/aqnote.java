@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -20,7 +20,7 @@ import org.apache.commons.net.ftp.FTPReply;
 /**
  * 下载网络资源,能定位到location重新下载具体的内容，支持location的http、ftp
  * 
- * @author madding.lip
+ * @author Peng Li
  **/
 public class Download {
 

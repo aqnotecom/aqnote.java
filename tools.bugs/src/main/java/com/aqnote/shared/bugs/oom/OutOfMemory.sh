@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# author: madding.lip
+# author: Peng Li
 # date: 2012.06.13
 # function: limit max run
 

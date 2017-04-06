@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -21,7 +21,7 @@ import com.sun.btrace.annotations.Self;
  * 初步怀疑是和buffer参数有关，原先使用jboss的参数为maxHttpHeadSize=8196，
  * 所以写了脚本提取了下线上的jetty参数，后面就修改了jetty参数为8k，解决了问题
  * 
- * @author madding.lip Jul 3, 2012 10:40:10 AM
+ * @author Peng Li Jul 3, 2012 10:40:10 AM
  */
 @BTrace
 public class JettyHeadBufferTracer {

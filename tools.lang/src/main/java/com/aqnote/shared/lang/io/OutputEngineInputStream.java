@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -13,7 +13,7 @@ import java.io.OutputStream;
  * 类OutputEngineInputStream.java的实现描述： 从<code>OutputEngine</code>取得数据的输入流, 作为<code>PipedInputStream</code>的替换方案, 这个类提供了极高的性能. 本代码移植自IBM
  * developer works精彩文章, 参见文档.
  * 
- * @author madding.lip May 7, 2012 5:00:14 PM
+ * @author Peng Li May 7, 2012 5:00:14 PM
  */
 public class OutputEngineInputStream extends InputStream {
 

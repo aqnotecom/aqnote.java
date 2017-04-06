@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -23,7 +23,7 @@ import com.aqnote.shared.charset.Charset;
 /**
  * 类StreamUtil.java的实现描述： 基于流的工具类. 部分方法移植自IBM developer works精彩文章, 参见文档.
  * 
- * @author madding.lip May 7, 2012 4:08:44 PM
+ * @author Peng Li May 7, 2012 4:08:44 PM
  */
 public class StreamUtil {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -22,7 +22,7 @@ import com.aqnote.shared.components.test.task.sub.MemberService;
 /**
  * 类AutoSignLocalTask.java的实现描述：生产者消费者模型
  * 
- * @author madding.lip Dec 22, 2012 2:19:55 PM
+ * @author Peng Li Dec 22, 2012 2:19:55 PM
  */
 public class AbstractTaskTest extends AbstractTask {
 

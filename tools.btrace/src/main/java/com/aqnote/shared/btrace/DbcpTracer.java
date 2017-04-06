@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -30,7 +30,7 @@ import com.sun.btrace.annotations.Self;
  *      <property name="maxOpenPreparedStatements" value="10" />    
  *  ....    
  * </bean>     
- * @author madding.lip Jul 3, 2012 10:45:32 AM
+ * @author Peng Li Jul 3, 2012 10:45:32 AM
  */
 @BTrace
 public class DbcpTracer {  
