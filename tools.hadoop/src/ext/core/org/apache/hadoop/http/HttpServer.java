@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */ org.apache.hadoop.http;
@@ -314,41 +314,41 @@ public class HttpServer implements FilterContainer {
 
   /** 
    * Add a Jersey resource /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */.
    * @param /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */Name The Java /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */ name containing the Jersey resource.
    * @param pathSpec The path spec for the servlet
    */
   public void addJerseyResource/*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */(final String /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */Name,
       final String pathSpec) {
     LOG.info("addJerseyResource/*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */: /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */Name=" + /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */Name
@@ -356,16 +356,16 @@ public class HttpServer implements FilterContainer {
     final ServletHolder sh = new ServletHolder(ServletContainer.class);
     sh.setInitParameter("com.sun.jersey.config.property.resourceConfigClass",
         "com.sun.jersey.api.core./*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */sResourceConfig");
     sh.setInitParameter("com.sun.jersey.config.property./*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */s", /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */Name);

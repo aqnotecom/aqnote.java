@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */ org.apache.hadoop;
@@ -25,14 +25,14 @@ import java.lang.annotation.*;
 
 /**
  * A /*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */ attribute that captures the version of Hadoop that was compiled.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType./*
- * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * Copyright (C) 2013-2016 aqnote.com<aqnote.com@gmail.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */)
