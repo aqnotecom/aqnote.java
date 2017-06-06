@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -31,7 +31,7 @@ import com.aqnote.shared.charset.Charset;
 /**
  * 类HttpClientUtil.java的实现描述：TODO 类实现描述
  * 
- * @author Peng Li Nov 21, 2013 4:08:03 PM
+ * @author "Peng Li"<aqnote@qq.com> Nov 21, 2013 4:08:03 PM
  */
 public class HttpClientUtil {
 

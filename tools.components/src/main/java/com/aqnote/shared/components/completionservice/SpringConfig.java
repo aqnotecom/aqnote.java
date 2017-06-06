@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 初始化spring容器
  * 
- * @author Peng Li
+ * @author "Peng Li"<aqnote@qq.com>
  */
 public class SpringConfig {
 

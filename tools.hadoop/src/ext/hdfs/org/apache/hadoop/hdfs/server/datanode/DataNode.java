@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */ org.apache.hadoop.hdfs.server.datanode;
@@ -479,16 +479,16 @@ public class DataNode extends Configured
 
     if (WebHdfsFileSystem.isEnabled(conf, LOG)) {
       infoServer.addJerseyResource/*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */(DatanodeWebHdfsMethods.class
           .get/*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */().getName() + ";" + Param.class.get/*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */().getName(),
@@ -530,7 +530,7 @@ public class DataNode extends Configured
     // We wrap to bypass standard mbean naming convention.
     // This wraping can be removed in java 6 as it is more flexible in 
     // /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */ naming for mbeans and their impl.

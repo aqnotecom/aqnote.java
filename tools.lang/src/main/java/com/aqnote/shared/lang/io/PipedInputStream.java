@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -14,7 +14,7 @@ import java.io.OutputStream;
  * 类PipedInputStream.java的实现描述：高效的<code>PipedInputStream</code>替换方案. 这个类提供了较标准实现更为宽松的约定, 换取了大大提高的性能. 支持非阻塞的操作. 本代码移植自IBM developer
  * works精彩文章, 参见文档.
  * 
- * @author Peng Li May 7, 2012 5:01:49 PM
+ * @author "Peng Li"<aqnote@qq.com> May 7, 2012 5:01:49 PM
  */
 public class PipedInputStream extends InputStream {
 

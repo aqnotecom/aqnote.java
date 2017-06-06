@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -13,7 +13,7 @@ import java.io.OutputStream;
  * 类ByteArrayOutputStream.java的实现描述： 非同步的<code>ByteArrayOutputStream</code>替换方案, 执行<code>toByteArray()</code>
  * 方法时返回的是只读的内部字节数组, 避免了没有必要的字节复制. 本代码移植自IBM developer works精彩文章, 参见文档.
  * 
- * @author Peng Li May 7, 2012 4:48:38 PM
+ * @author "Peng Li"<aqnote@qq.com> May 7, 2012 4:48:38 PM
  */
 public class ByteArrayOutputStream extends OutputStream {
 

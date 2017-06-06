@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -14,7 +14,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * 2.生产者慢，消费者快，消费是否正常
  * 3.多个消费者之间的竞争问题
  * 
- * @author Peng Li Jul 31, 2013 3:53:23 PM
+ * @author "Peng Li"<aqnote@qq.com> Jul 31, 2013 3:53:23 PM
  */
 public class LinkedBlockingQueueTest {
 

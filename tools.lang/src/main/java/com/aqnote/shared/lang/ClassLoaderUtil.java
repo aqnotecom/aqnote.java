@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -8,7 +8,7 @@ package com.aqnote.shared.lang;
 /**
  * 类ClassLoaderUtil.java的实现描述：classLoader加载类
  * 
- * @author Peng Li Sep 18, 2013 11:27:20 AM
+ * @author "Peng Li"<aqnote@qq.com> Sep 18, 2013 11:27:20 AM
  */
 public class ClassLoaderUtil {
 

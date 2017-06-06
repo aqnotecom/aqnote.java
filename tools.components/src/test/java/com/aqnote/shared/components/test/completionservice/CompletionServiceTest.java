@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -19,7 +19,7 @@ import com.aqnote.shared.components.test.completionservice.sub.PunishService;
 /**
  * 类CompletionServiceTest.java的实现描述：并发远程调用服务
  * 
- * @author Peng Li Aug 8, 2013 10:33:33 AM
+ * @author "Peng Li"<aqnote@qq.com> Aug 8, 2013 10:33:33 AM
  */
 public class CompletionServiceTest {
 

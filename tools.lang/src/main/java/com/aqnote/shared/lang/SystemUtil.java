@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -21,7 +21,7 @@ import java.net.UnknownHostException;
  * </p>
  *
  * 
- * @author Peng Li May 7, 2012 5:53:41 PM
+ * @author "Peng Li"<aqnote@qq.com> May 7, 2012 5:53:41 PM
  */
 public class SystemUtil {
     private static final JvmSpecInfo     JVM_SPEC_INFO     = new JvmSpecInfo();

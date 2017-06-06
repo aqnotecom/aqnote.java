@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -18,7 +18,7 @@ import com.aqnote.shared.lang.internal.Entities;
 /**
  * 类StringEscapeUtil.java的实现描述：字符串转义工具类，能将字符串转换成适应 Java、Java Script、HTML、XML、和SQL语句的形式。
  *  
- * @author Peng Li May 7, 2012 5:55:06 PM
+ * @author "Peng Li"<aqnote@qq.com> May 7, 2012 5:55:06 PM
  */
 public class StringEscapeUtil {
     /* ============================================================================ */

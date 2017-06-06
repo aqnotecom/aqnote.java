@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -16,7 +16,7 @@ import com.sun.btrace.annotations.TLS;
  * 类MethodTimeUsage.java的实现描述：
  * 追踪运行时某个方法具体消耗的时间,用来排查性能
  * 
- * @author Peng Li May 16, 2012 9:31:22 AM
+ * @author "Peng Li"<aqnote@qq.com> May 16, 2012 9:31:22 AM
  */
 @BTrace
 public class MethodTimeSpendTracer {

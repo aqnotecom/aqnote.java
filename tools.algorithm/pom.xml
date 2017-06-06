@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.aqnote.shared</groupId>
+		<artifactId>tools.all</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.aqnote.shared</groupId>
+	<artifactId>tools.algorithm</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>tools.algorithm</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- xpath -->
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>maven-cobertura-plugin</artifactId>
+					<groupId>maven-plugins</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>maven-findbugs-plugin</artifactId>
+					<groupId>maven-plugins</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- dom impl -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+		</dependency>
+
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

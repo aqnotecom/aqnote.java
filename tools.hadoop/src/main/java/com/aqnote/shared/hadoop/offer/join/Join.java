@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -18,7 +18,7 @@ import org.apache.hadoop.util.GenericOptionsParser;
 /**
  * 类Join.java的实现描述：TODO 类实现描述
  * 
- * @author Peng Li Jul 27, 2012 3:00:18 PM
+ * @author "Peng Li"<aqnote@qq.com> Jul 27, 2012 3:00:18 PM
  */
 public class Join {
 

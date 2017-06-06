@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -11,7 +11,7 @@ import java.io.OutputStream;
 /**
  * 类OutputEngine.java的实现描述： 增量地将数据源写入到指定输出流的引擎, 本代码移植自IBM developer works精彩文章, 参见文档.
  * 
- * @author Peng Li May 7, 2012 4:54:12 PM
+ * @author "Peng Li"<aqnote@qq.com> May 7, 2012 4:54:12 PM
  */
 public interface OutputEngine {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -8,7 +8,7 @@ package com.aqnote.shared.bugs.sof;
 /**
  * StackOverflow.java desc：TODO
  * 
- * @author Peng Li Jun 10, 2014 4:19:43 PM
+ * @author "Peng Li"<aqnote@qq.com> Jun 10, 2014 4:19:43 PM
  */
 public class StackOverflow_EXP1 {
 

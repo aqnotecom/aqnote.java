@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -15,7 +15,7 @@ import java.util.List;
  * 这个类中的每个方法都可以“安全”地处理<code>null</code>，而不会抛出<code>NullPointerException</code>。
  * </p>
  * 
- * @author Peng Li May 7, 2012 5:26:08 PM
+ * @author "Peng Li"<aqnote@qq.com> May 7, 2012 5:26:08 PM
  */
 public class StringUtil {
 

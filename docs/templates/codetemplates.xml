@@ -6,7 +6,7 @@
  * ${tags}
  */</template><template autoinsert="false" context="filecomment_context" deleted="false" description="Comment for created Java files" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.filecomment" name="filecomment">/*
  * Programmer-tools -- A develop code for dever to quickly analyse
- * Copyright (C) 2013-2016 Peng Li &lt;aqnote.com@gmail.com&gt;.
+ * Copyright (C) 2013-2016 Peng Li &lt;aqnote@qq.com&gt;.
  * 
  * This library is free software; you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by

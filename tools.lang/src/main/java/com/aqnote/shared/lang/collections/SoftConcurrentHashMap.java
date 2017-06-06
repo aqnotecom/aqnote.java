@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 类SoftConcurrentHashMap.java的实现描述:soft对象，避免该对象作为全局变量时导致内存溢出情况，
  * 由于这个特性，该对象不能存储非常重要的信息，建议只作jvm级别缓存用
  * 
- * @author Peng Li Sep 17, 2013 4:36:28 PM
+ * @author "Peng Li"<aqnote@qq.com> Sep 17, 2013 4:36:28 PM
  */
 @SuppressWarnings("rawtypes")
 public class SoftConcurrentHashMap extends AbstractMap {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -21,7 +21,7 @@ import org.apache.http.params.SyncBasicHttpParams;
 /**
  * 类HTTPClientFactory.java的实现描述：httpclient工厂类
  * 
- * @author Peng Li Apr 8, 2013 1:54:37 PM
+ * @author "Peng Li"<aqnote@qq.com> Apr 8, 2013 1:54:37 PM
  */
 public class HTTPClientFactory {
 

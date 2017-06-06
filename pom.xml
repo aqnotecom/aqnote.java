@@ -445,6 +445,7 @@
     <module>tools.protocol</module>
     <module>tools.components</module>
     <module>tools.datastructure</module>
+    <module>tools.algorithm</module>
   </modules>
 
 	<build>

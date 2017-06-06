@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2016 Peng Li<aqnote.com@gmail.com>.
+ * Copyright (C) 2013-2016 Peng Li<aqnote@qq.com>.
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 类AbstractTask.java的实现描述：生产者消费者模型原始实现，用来分析用
  * 
- * @author Peng Li Dec 22, 2012 1:59:01 PM
+ * @author "Peng Li"<aqnote@qq.com> Dec 22, 2012 1:59:01 PM
  */
 public abstract class AbstractTask extends Task {
 
