@@ -12,6 +12,10 @@
 	<properties>
 		<maven.test.skip>true</maven.test.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<javac_target>1.8</javac_target>
+		<javacc_version>5.0</javacc_version>
+
 		<junit_version>4.5</junit_version>
 		<mockito_version>1.10.19</mockito_version>
 		<apache_commons_codec>1.6</apache_commons_codec>
@@ -29,7 +33,6 @@
 		<xerces_version>2.9.1</xerces_version>
 		<httpclient_version>4.2</httpclient_version>
 		<httpasyncclient_version>4.0.1</httpasyncclient_version>
-		<javacc_version>5.0</javacc_version>
 		<sitemapgen4j_version>1.0.1</sitemapgen4j_version>
 		<cryptix_version>3.2.0</cryptix_version>
 		<velocity_version>1.6.4</velocity_version>
@@ -48,8 +51,25 @@
 		<jetty_server_version>9.0.3.v20130506</jetty_server_version>
 		<bouncycastle_version>1.50</bouncycastle_version>
 		<guava_version>17.0</guava_version>
+		<jmh_version>1.11.3</jmh_version>
+		<uberjar_name>benchmarks</uberjar_name>
 	</properties>
 
+	<dependencies>
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- mock -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
 	<dependencyManagement>
 		<dependencies>
 			<!-- slf4j_log interface -->
@@ -320,38 +340,41 @@
 			</dependency>
 
 			<!-- spring -->
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring</artifactId>
-          <version>${spring_framework_version}</version>
-      </dependency>
+      		<dependency>
+          		<groupId>org.springframework</groupId>
+          		<artifactId>spring</artifactId>
+          		<version>${spring_framework_version}</version>
+      		</dependency>
 
-      <!-- spring test -->
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-test</artifactId>
-          <version>${spring_framework_version}</version>
-          <exclusions>
-              <exclusion>
-                  <groupId>commons-logging</groupId>
-                  <artifactId>commons-logging</artifactId>
-               </exclusion>
-           </exclusions>
-           <scope>test</scope>
-      </dependency>
+      		<!-- spring test -->
+      		<dependency>
+          		<groupId>org.springframework</groupId>
+          		<artifactId>spring-test</artifactId>
+          		<version>${spring_framework_version}</version>
+         		 <exclusions>
+             		 <exclusion>
+                 	 	<groupId>commons-logging</groupId>
+                  		<artifactId>commons-logging</artifactId>
+               		</exclusion>
+           		</exclusions>
+           		<scope>test</scope>
+      		</dependency>
 
-      <!-- junit -->
+      		<!-- junit -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit_version}</version>
 				<scope>test</scope>
 			</dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>${mockito_version}</version>
-      </dependency>
+
+			<!-- mock -->
+      		<dependency>
+        		<groupId>org.mockito</groupId>
+        		<artifactId>mockito-all</artifactId>
+        		<version>${mockito_version}</version>
+				<scope>test</scope>
+      		</dependency>
 
 			<!-- servlet -->
 			<dependency>
@@ -360,6 +383,7 @@
 				<version>${servlet_api_version}</version>
 				<scope>provided</scope>
 			</dependency>
+
 			<!-- ostermiller -->
             <dependency>
                 <groupId>org.ostermiller</groupId>
@@ -426,8 +450,6 @@
 				<artifactId>guava</artifactId>
 				<version>${guava_version}</version>
 			</dependency>
-
-
 		</dependencies>
 	</dependencyManagement>
 
@@ -440,13 +462,13 @@
 		<module>tools.hadoop</module>
 		<module>tools.javacc</module>
 		<module>tools.maven</module>
-    <module>tools.test</module>
-    <module>tools.designpattern</module>
-    <module>tools.protocol</module>
-    <module>tools.components</module>
-    <module>tools.datastructure</module>
-    <module>tools.algorithm</module>
-  </modules>
+    	<module>tools.test</module>
+   	 	<module>tools.designpattern</module>
+    	<module>tools.protocol</module>
+    	<module>tools.components</module>
+    	<module>tools.datastructure</module>
+    	<module>tools.algorithm</module>
+  	</modules>
 
 	<build>
 		<resources>
@@ -490,13 +512,53 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-          <compilerArgument>-XDignore.symbol.file</compilerArgument>
+					<compilerArgument>-XDignore.symbol.file</compilerArgument>
+					<compilerVersion>${javac_target}</compilerVersion>
+					<source>${javac_target}</source>
+					<target>${javac_target}</target>
 				</configuration>
 			</plugin>
-
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.9.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.3</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.2.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.17</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 </project>

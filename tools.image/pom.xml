@@ -13,12 +13,4 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>tools.image</name>
 	<url>http://www.aqnote.com</url>
-	
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 </project>

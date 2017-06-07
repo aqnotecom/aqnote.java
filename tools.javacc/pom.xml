@@ -15,11 +15,6 @@
 	<url>http://www.aqnote.com</url>
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>net.java.dev.javacc</groupId>
 			<artifactId>javacc</artifactId>
 		</dependency>
