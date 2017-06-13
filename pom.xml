@@ -52,24 +52,8 @@
 		<bouncycastle_version>1.50</bouncycastle_version>
 		<guava_version>17.0</guava_version>
 		<jmh_version>1.11.3</jmh_version>
-		<uberjar_name>benchmarks</uberjar_name>
 	</properties>
 
-	<dependencies>
-		<!-- junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- mock -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
 	<dependencyManagement>
 		<dependencies>
 			<!-- slf4j_log interface -->
@@ -450,6 +434,19 @@
 				<artifactId>guava</artifactId>
 				<version>${guava_version}</version>
 			</dependency>
+
+			<!-- benchmarks -->
+			<dependency>
+				<groupId>org.openjdk.jmh</groupId>
+				<artifactId>jmh-core</artifactId>
+				<version>${jmh_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openjdk.jmh</groupId>
+				<artifactId>jmh-generator-annprocess</artifactId>
+				<version>${jmh_version}</version>
+				<scope>provided</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -468,7 +465,21 @@
     	<module>tools.components</module>
     	<module>tools.datastructure</module>
     	<module>tools.algorithm</module>
+    	<module>tools.benchmarks</module>
   	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<resources>
@@ -506,21 +517,24 @@
 			</testResource>
 		</testResources>
 
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<compilerArgument>-XDignore.symbol.file</compilerArgument>
-					<compilerVersion>${javac_target}</compilerVersion>
-					<source>${javac_target}</source>
-					<target>${javac_target}</target>
-				</configuration>
-			</plugin>
-		</plugins>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<compilerArgument>-XDignore.symbol.file</compilerArgument>
+						<compilerVersion>${javac_target}</compilerVersion>
+						<source>${javac_target}</source>
+						<target>${javac_target}</target>
+					</configuration>
+				</plugin>
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>2.5</version>
@@ -559,6 +573,13 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 
 </project>
