@@ -5,9 +5,6 @@
  */
 package com.aqnote.shared.lang.classloader;
 
-
-import sun.misc.IOUtils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,7 +26,7 @@ public class MetaClassLoader extends ClassLoader {
         byte[] classData = null;
         FileInputStream f = null;
         try {
-             f = new FileInputStream(classpath);
+            f = new FileInputStream(classpath);
             int num = f.available();
             classData = new byte[num];
             f.read(classData);

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.aqnote.shared</groupId>
 	<artifactId>tools.all</artifactId>
@@ -8,14 +7,11 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Authentication App Parent POM</name>
 	<description>Auto converted POM for Authentication Application</description>
-
 	<properties>
 		<maven.test.skip>true</maven.test.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<javac_target>1.8</javac_target>
 		<javacc_version>5.0</javacc_version>
-
 		<junit_version>4.5</junit_version>
 		<mockito_version>1.10.19</mockito_version>
 		<apache_commons_codec>1.6</apache_commons_codec>
@@ -53,7 +49,6 @@
 		<guava_version>17.0</guava_version>
 		<jmh_version>1.11.3</jmh_version>
 	</properties>
-
 	<dependencyManagement>
 		<dependencies>
 			<!-- slf4j_log interface -->
@@ -92,18 +87,16 @@
 				<artifactId>slf4j-nop</artifactId>
 				<version>${slf4j_version}</version>
 			</dependency>
-
 			<!-- log4j_log impl -->
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>${log4j_version}</version>
 			</dependency>
-			
 			<!-- apache common -->
 			<dependency>
-			    <groupId>commons-lang</groupId>
-			    <artifactId>commons-lang</artifactId>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
 				<version>${commons_lang_version}</version>
 			</dependency>
 			<dependency>
@@ -126,7 +119,6 @@
 				<artifactId>commons-daemon</artifactId>
 				<version>${apache_commons_daemon}</version>
 			</dependency>
-
 			<!-- httpclient -->
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
@@ -168,7 +160,6 @@
 				<artifactId>httpasyncclient-cache</artifactId>
 				<version>${httpasyncclient_version}</version>
 			</dependency>
-			
 			<!-- btrace -->
 			<dependency>
 				<groupId>com.sun.tools.btrace</groupId>
@@ -185,7 +176,6 @@
 				<artifactId>btrace-agent</artifactId>
 				<version>${btrace_version}</version>
 			</dependency>
-			
 			<!-- hadoop -->
 			<dependency>
 				<groupId>org.apache.hadoop</groupId>
@@ -202,7 +192,6 @@
 				<artifactId>hadoop-client</artifactId>
 				<version>${hadoop_version}</version>
 			</dependency>
-			
 			<!-- xpath -->
 			<dependency>
 				<groupId>jaxen</groupId>
@@ -219,42 +208,36 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-
 			<!-- dom impl -->
 			<dependency>
 				<groupId>dom4j</groupId>
 				<artifactId>dom4j</artifactId>
 				<version>${dom4j_version}</version>
 			</dependency>
-
 			<!-- sax impl  -->
 			<dependency>
 				<groupId>xerces</groupId>
 				<artifactId>xercesImpl</artifactId>
 				<version>${xerces_version}</version>
 			</dependency>
-
 			<!-- javacc -->
 			<dependency>
 				<groupId>net.java.dev.javacc</groupId>
 				<artifactId>javacc</artifactId>
 				<version>${javacc_version}</version>
 			</dependency>
-
 			<!-- sitemap -->
 			<dependency>
 				<groupId>com.google.code</groupId>
 				<artifactId>sitemapgen4j</artifactId>
 				<version>${sitemapgen4j_version}</version>
 			</dependency>
-
-            <!-- hessian -->
-		   <dependency>
-		       <groupId>com.caucho</groupId>
-		       <artifactId>hessian</artifactId>
-			   <version>${hessian_version}</version>
-		   </dependency>
-
+			<!-- hessian -->
+			<dependency>
+				<groupId>com.caucho</groupId>
+				<artifactId>hessian</artifactId>
+				<version>${hessian_version}</version>
+			</dependency>
 			<!-- graphic -->
 			<dependency>
 				<groupId>jfree</groupId>
@@ -301,96 +284,85 @@
 				<artifactId>swt-win32</artifactId>
 				<version>${swt_win32_version}</version>
 			</dependency>
-
-            <!-- restfull -->
+			<!-- restfull -->
 			<dependency>
 				<groupId>com.sun.jersey</groupId>
 				<artifactId>jersey-server</artifactId>
 				<version>${jersey_server}</version>
 			</dependency>
-
-            <!-- jetty server -->
+			<!-- jetty server -->
 			<dependency>
-		        <groupId>org.eclipse.jetty</groupId>
-		        <artifactId>jetty-server</artifactId>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-server</artifactId>
 				<version>${jetty_server_version}</version>
-	       </dependency>
-
+			</dependency>
 			<!-- velocity  -->
 			<dependency>
-			    <groupId>org.apache.velocity</groupId>
-			    <artifactId>velocity</artifactId>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
 				<version>${velocity_version}</version>
 			</dependency>
-
 			<!-- spring -->
-      		<dependency>
-          		<groupId>org.springframework</groupId>
-          		<artifactId>spring</artifactId>
-          		<version>${spring_framework_version}</version>
-      		</dependency>
-
-      		<!-- spring test -->
-      		<dependency>
-          		<groupId>org.springframework</groupId>
-          		<artifactId>spring-test</artifactId>
-          		<version>${spring_framework_version}</version>
-         		 <exclusions>
-             		 <exclusion>
-                 	 	<groupId>commons-logging</groupId>
-                  		<artifactId>commons-logging</artifactId>
-               		</exclusion>
-           		</exclusions>
-           		<scope>test</scope>
-      		</dependency>
-
-      		<!-- junit -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring</artifactId>
+				<version>${spring_framework_version}</version>
+			</dependency>
+			<!-- spring test -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring_framework_version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+				<scope>test</scope>
+			</dependency>
+			<!-- junit -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit_version}</version>
 				<scope>test</scope>
 			</dependency>
-
 			<!-- mock -->
-      		<dependency>
-        		<groupId>org.mockito</groupId>
-        		<artifactId>mockito-all</artifactId>
-        		<version>${mockito_version}</version>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito_version}</version>
 				<scope>test</scope>
-      		</dependency>
-
+			</dependency>
 			<!-- servlet -->
 			<dependency>
-			    <groupId>javax.servlet</groupId>
-			    <artifactId>servlet-api</artifactId>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
 				<version>${servlet_api_version}</version>
 				<scope>provided</scope>
 			</dependency>
-
 			<!-- ostermiller -->
-            <dependency>
-                <groupId>org.ostermiller</groupId>
-                <artifactId>utils</artifactId>
-                <version>1.07.00</version>
-            </dependency>
-
+			<dependency>
+				<groupId>org.ostermiller</groupId>
+				<artifactId>utils</artifactId>
+				<version>1.07.00</version>
+			</dependency>
 			<!-- cryptix_security.provider.n=cryptix.jce.provider.CryptixCrypto -->
 			<dependency>
 				<groupId>cryptix</groupId>
 				<artifactId>cryptix</artifactId>
 				<version>${cryptix_version}</version>
 			</dependency>
-
 			<!-- provider encrypt/decrypt and cert -->
 			<dependency>
-			    <groupId>org.bouncycastle</groupId>
-			    <artifactId>bcprov-jdk15on</artifactId>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk15on</artifactId>
 				<version>${bouncycastle_version}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.bouncycastle</groupId>
-			    <artifactId>bcprov-ext-jdk15on</artifactId>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-ext-jdk15on</artifactId>
 				<version>${bouncycastle_version}</version>
 			</dependency>
 			<dependency>
@@ -399,13 +371,13 @@
 				<version>${bouncycastle_version}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.bouncycastle</groupId>
-			    <artifactId>bcpg-jdk15on</artifactId>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcpg-jdk15on</artifactId>
 				<version>${bouncycastle_version}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.bouncycastle</groupId>
-			    <artifactId>bcmail-jdk15on</artifactId>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcmail-jdk15on</artifactId>
 				<version>${bouncycastle_version}</version>
 			</dependency>
 			<dependency>
@@ -413,28 +385,24 @@
 				<artifactId>bctsp-jdk15on</artifactId>
 				<version>1.46</version>
 			</dependency>
-
 			<!-- user agent -->
 			<dependency>
-	            <groupId>nl.bitwalker</groupId>
-	            <artifactId>UserAgentUtils</artifactId>
+				<groupId>nl.bitwalker</groupId>
+				<artifactId>UserAgentUtils</artifactId>
 				<version>1.2.4</version>
-	        </dependency>
-
+			</dependency>
 			<!-- fastjson -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
-			    <version>1.1.28</version>
+				<version>1.1.28</version>
 			</dependency>
-
 			<!-- gogole sdk -->
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
 				<version>${guava_version}</version>
 			</dependency>
-
 			<!-- benchmarks -->
 			<dependency>
 				<groupId>org.openjdk.jmh</groupId>
@@ -449,7 +417,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 	<modules>
 		<module>tools.image</module>
 		<module>tools.lang</module>
@@ -459,15 +426,13 @@
 		<module>tools.hadoop</module>
 		<module>tools.javacc</module>
 		<module>tools.maven</module>
-    	<module>tools.test</module>
-   	 	<module>tools.designpattern</module>
-    	<module>tools.protocol</module>
-    	<module>tools.components</module>
-    	<module>tools.datastructure</module>
-    	<module>tools.algorithm</module>
-    	<module>tools.benchmarks</module>
-  	</modules>
-
+		<module>tools.test</module>
+		<module>tools.designpattern</module>
+		<module>tools.protocol</module>
+		<module>tools.components</module>
+		<module>tools.datastructure</module>
+		<module>tools.benchmarks</module>
+	</modules>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -480,7 +445,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<resources>
 			<resource>
@@ -516,7 +480,6 @@
 				</excludes>
 			</testResource>
 		</testResources>
-
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -573,7 +536,6 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -581,5 +543,14 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+		<repository>
+			<id>aqnote-release</id>
+			<url>http://aqnote.local:8081/repository/aqnote-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>aqnote-snapshot</id>
+			<url>http://aqnote.local:8081/repository/aqnote-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>

@@ -22,25 +22,22 @@ Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
 or visit www.oracle.com if you need additional information or have any
 questions.
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>tools.all</artifactId>
-    <groupId>com.aqnote.shared</groupId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-
+        <artifactId>tools.all</artifactId>
+        <groupId>com.aqnote.shared</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
     <groupId>com.aqnote.shared</groupId>
     <artifactId>tools.benchmarks</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>tools.benchmarks</name>
     <packaging>jar</packaging>
-
-    <name>Auto-generated JMH benchmark</name>
-
     <prerequisites>
         <maven>3.0</maven>
     </prerequisites>
-
     <dependencies>
         <dependency>
             <groupId>com.aqnote.shared</groupId>
@@ -57,11 +54,9 @@ questions.
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
     <properties>
         <uberjar.name>tools.benchmarks</uberjar.name>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -100,5 +95,4 @@ questions.
             </plugin>
         </plugins>
     </build>
-
 </project>
