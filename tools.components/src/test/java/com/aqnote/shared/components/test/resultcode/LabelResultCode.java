@@ -16,14 +16,14 @@ import com.aqnote.shared.components.resultcode.ResultCodeComp;
  * 
  * @author "Peng Li"<aqnote@qq.com> Sep 17, 2013 5:25:32 PM
  */
-enum MyResultCode implements IRichResultCode {
+enum LabelResultCode implements IRichResultCode {
                                               AAA(0), BBB(1), CCC(2), DDD(3);
 
     private int                  code;
 
     private final ResultCodeComp comp = new ResultCodeComp(this, Locale.CHINA);
 
-    private MyResultCode(int code){
+    private LabelResultCode(int code){
         this.code = code;
     }
 

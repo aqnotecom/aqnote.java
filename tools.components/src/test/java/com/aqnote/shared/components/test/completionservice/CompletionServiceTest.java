@@ -16,6 +16,8 @@ import com.aqnote.shared.components.test.completionservice.sub.AuthService;
 import com.aqnote.shared.components.test.completionservice.sub.CheckcodeService;
 import com.aqnote.shared.components.test.completionservice.sub.PunishService;
 
+import org.junit.Test;
+
 /**
  * 类CompletionServiceTest.java的实现描述：并发远程调用服务
  * 
@@ -23,11 +25,9 @@ import com.aqnote.shared.components.test.completionservice.sub.PunishService;
  */
 public class CompletionServiceTest {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-
+    @Test
+    public void testcase01()
+    {
         int i = 0;
         int N = 100;
         long start = System.currentTimeMillis();
@@ -41,10 +41,10 @@ public class CompletionServiceTest {
         i = 0;
         start = System.currentTimeMillis();
         while (i++ < N) {
-            invoke();
+            orderInvoke();
         }
         end = System.currentTimeMillis();
-        System.out.print("invoke: ");
+        System.out.print("orderInvoke: ");
         System.out.println(end - start);
     }
 
@@ -59,6 +59,7 @@ public class CompletionServiceTest {
         service.waitService();
         Map<CallServiceModel, Object> resultPool = CallReturnModelPool.getCallReturnPool();
 
+
         String authResult = (String) resultPool.get(models.get(0));
         String checkcodeValidResult = (String) resultPool.get(models.get(1));
         String punishResult = (String) resultPool.get(models.get(2));
@@ -70,7 +71,7 @@ public class CompletionServiceTest {
         CallReturnModelPool.clean(models);
     }
 
-    public static void invoke() {
+    public static void orderInvoke() {
         AuthService authService = (AuthService) SpringConfig.context.getBean("authService");
         CheckcodeService checkcodeService = (CheckcodeService) SpringConfig.context.getBean("checkcodeService");
         PunishService punishService = (PunishService) SpringConfig.context.getBean("punishService");

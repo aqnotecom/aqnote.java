@@ -18,12 +18,12 @@ import com.aqnote.shared.lang.LocaleUtil;
  * 
  * @author "Peng Li"<aqnote@qq.com>
  */
-public class MyResultCodeTest {
+public class ResultCodeTest {
 
     @Test
     @Ignore
     public void test() {
-        MyResultCode code = MyResultCode.AAA;
+        LabelResultCode code = LabelResultCode.AAA;
         System.out.println(code.getClass().getName());
         System.out.println(code.getClass().isEnum());
         System.out.println(code.getName());
@@ -41,17 +41,17 @@ public class MyResultCodeTest {
     @Test
     // @Ignore
     public void test2() {
-        System.out.println(MyResultCode.AAA.getName());
-        System.out.println(MyResultCode.AAA.getMessage());
-        // System.out.println(MyResultCode.BBB.getMessage());
-        // System.out.println(MyResultCode.CCC.getMessage());
-        // System.out.println(MyResultCode.DDD.getMessage());
+        System.out.println(LabelResultCode.AAA.getName());
+        System.out.println(LabelResultCode.AAA.getMessage());
+        // System.out.println(LabelResultCode.BBB.getMessage());
+        // System.out.println(LabelResultCode.CCC.getMessage());
+        // System.out.println(LabelResultCode.DDD.getMessage());
     }
 
     @Test
     @Ignore
     public void test3() {
-        IResultCode[] elements = MyResultCode.AAA.getClass().getEnumConstants();
+        IResultCode[] elements = LabelResultCode.AAA.getClass().getEnumConstants();
         for (IResultCode element : elements) {
             System.out.println(element.getName());
         }

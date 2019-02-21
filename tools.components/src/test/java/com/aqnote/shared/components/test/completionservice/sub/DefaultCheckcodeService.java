@@ -15,6 +15,7 @@ public class DefaultCheckcodeService implements CheckcodeService {
     @Override
     public String valid(String sid, String input) {
         try {
+
             Thread.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
