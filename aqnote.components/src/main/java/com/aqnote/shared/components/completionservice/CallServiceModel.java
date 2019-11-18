@@ -7,7 +7,7 @@ package com.aqnote.shared.components.completionservice;
 
 /**
  * CallServiceModel类描述：调用模型
- * 
+ *
  * @author "Peng Li"<aqnote@aqnote.com>
  */
 public class CallServiceModel {

@@ -1,3 +1,5 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.format.settings.profile": "com-aqnote-format",
+    "java.format.settings.url": "https://github.com/aqnotecom/aqnote.java/blob/1.0.0/docs/templates/codeformat.xml"
 }
