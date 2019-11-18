@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>aqnote.all</artifactId>
+		<groupId>com.aqnote.shared</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.aqnote.shared</groupId>
+	<artifactId>aqnote.btrace</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>aqnote.btrace</name>
+	<url>http://www.aqnote.com</url>
+	<organization>
+		<name>Peng Li</name>
+		<url>http://www.aqnote.com</url>
+	</organization>
+	<dependencies>
+		<dependency>
+			<groupId>com.sun.tools.btrace</groupId>
+			<artifactId>btrace-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.tools.btrace</groupId>
+			<artifactId>btrace-boot</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.tools.btrace</groupId>
+			<artifactId>btrace-agent</artifactId>
+		</dependency>
+	</dependencies>
+</project>

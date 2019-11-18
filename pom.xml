@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.aqnote.shared</groupId>
-	<artifactId>tools.all</artifactId>
+	<artifactId>aqnote.all</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Authentication App Parent POM</name>
@@ -418,20 +418,20 @@
 		</dependencies>
 	</dependencyManagement>
 	<modules>
-		<module>tools.image</module>
-		<module>tools.lang</module>
-		<module>tools.btrace</module>
-		<module>tools.net</module>
-		<module>tools.bugs</module>
-		<module>tools.hadoop</module>
-		<module>tools.javacc</module>
-		<module>tools.maven</module>
-		<module>tools.test</module>
-		<module>tools.designpattern</module>
-		<module>tools.protocol</module>
-		<module>tools.components</module>
-		<module>tools.datastructure</module>
-		<module>tools.benchmarks</module>
+		<module>aqnote.image</module>
+		<module>aqnote.lang</module>
+		<module>aqnote.btrace</module>
+		<module>aqnote.net</module>
+		<module>aqnote.bugs</module>
+		<module>aqnote.hadoop</module>
+		<module>aqnote.javacc</module>
+		<module>aqnote.maven</module>
+		<module>aqnote.test</module>
+		<module>aqnote.designpattern</module>
+		<module>aqnote.protocol</module>
+		<module>aqnote.components</module>
+		<module>aqnote.datastructure</module>
+		<module>aqnote.benchmarks</module>
 	</modules>
 	<dependencies>
 		<dependency>
