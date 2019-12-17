@@ -3,8 +3,7 @@
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
-package com.aqnote.shared.test.hash.type;
-
+package com.aqnote.shared.test.hash;
 
 /**
  * java和oracle中的hash算法 F
@@ -14,10 +13,10 @@ package com.aqnote.shared.test.hash.type;
  * <ul>
  * <li>"Aa", "BB"</li>
  * </ul>
- * 
+ *
  * @author "Peng Li"<aqnote@aqnote.com>
  */
-public class JavaAndOracleHashAlgorithm {
+public class JavaDefaultHashAlgorithm {
 
     public static boolean sameHashcode(String a, String b) {
         return hash(a) == hash(b);

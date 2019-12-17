@@ -5,17 +5,17 @@
  */
 package com.aqnote.shared.test.hash.collision;
 
-import com.aqnote.shared.test.hash.type.JavaAndOracleHashAlgorithm;
+import com.aqnote.shared.test.hash.JavaDefaultHashAlgorithm;
 
 /**
  * 罗列一致的hash的种子冲突
- * 
+ *
  * @author "Peng Li"<aqnote@aqnote.com>
  */
 public class SeedCollision {
 
     public static void main(String[] args) {
-        JavaAndOracleHashAlgorithm.sameHashcode("Aa", "BB");
+        JavaDefaultHashAlgorithm.sameHashcode("Aa", "BB");
     }
 
 }

@@ -3,11 +3,11 @@
  * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
-package com.aqnote.shared.test.mutlithreadvariable;
+package com.aqnote.shared.test.thread;
 
-class VisibilityThread extends Thread {
+class VisibilityRunnable implements Runnable {
 
-    // private volatile boolean stop;
+//    private volatile boolean stop;
     private boolean stop;
 
     public void run() {
@@ -28,17 +28,21 @@ class VisibilityThread extends Thread {
     }
 }
 
-public class MultiThreadVariable {
+public class MultiThreadVariableV2 {
 
     public static void main(String[] args) throws Exception {
-        VisibilityThread v = new VisibilityThread();
-        v.start();
+        VisibilityRunnable vr = new VisibilityRunnable();
+        Thread t = new Thread();
+        t.start();
 
-        Thread.sleep(1000); // 停顿1秒等待新启线程执行
+        Thread.sleep(1000);// 停顿1秒等待新启线程执行
         System.out.println("即将置stop值为true");
-        v.stopIt();
+        vr.stopIt();
         Thread.sleep(1000);
         System.out.println("finish main");
-        System.out.println("main中通过getStop获取的stop值:" + v.getStop());
+        System.out.println("main中通过getStop获取的stop值:" + vr.getStop());
+//        for(StackTraceElement element : t.getStackTrace()) {
+//            System.out.println(element);
+//        }
     }
 }

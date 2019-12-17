@@ -5,7 +5,6 @@
  */
 package com.aqnote.shared.test.httpclient;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -23,20 +22,20 @@ import org.apache.http.util.EntityUtils;
 public class ClientChunkEncodedPost {
 
     public static void main(String[] args) throws Exception {
-//        if (args.length != 1)  {
-//            System.out.println("File path not given");
-//            System.exit(1);
-//        }
-    	args = new String[1];
-    	args[0] = "/home/madding/1m.txt";
+        // if (args.length != 1) {
+        // System.out.println("File path not given");
+        // System.exit(1);
+        // }
+        args = new String[1];
+        args[0] = "/home/madding/1m.txt";
         HttpClient httpclient = new DefaultHttpClient();
         try {
-            HttpPost httppost = new HttpPost("http://detail.china.alibaba.com/offer/1207975585.html?spm=a260b.31636.5768029.7");
+            HttpPost httppost = new HttpPost(
+                    "http://detail.china.alibaba.com/offer/1207975585.html?spm=a260b.31636.5768029.7");
 
             File file = new File(args[0]);
 
-            InputStreamEntity reqEntity = new InputStreamEntity(
-                    new FileInputStream(file), -1);
+            InputStreamEntity reqEntity = new InputStreamEntity(new FileInputStream(file), -1);
             reqEntity.setContentType("binary/octet-stream");
             reqEntity.setChunked(true);
             // It may be more appropriate to use FileEntity class in this particular

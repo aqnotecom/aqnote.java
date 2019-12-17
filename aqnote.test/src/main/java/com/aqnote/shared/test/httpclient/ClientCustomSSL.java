@@ -41,14 +41,15 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 /**
- * This example demonstrates how to create secure connections with a custom SSL context.
+ * This example demonstrates how to create secure connections with a custom SSL
+ * context.
  */
 public class ClientCustomSSL {
 
     public final static void main(String[] args) throws Exception {
         System.setProperty("javax.net.debug", "ssl");
         System.setProperty("https.protocols", "TLSv1");
-        
+
         DefaultHttpClient httpclient = new DefaultHttpClient();
         try {
             KeyStore trustStore = KeyStore.getInstance("pkcs12");

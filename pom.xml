@@ -11,7 +11,7 @@
 	<properties>
 		<maven.test.skip>true</maven.test.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<javac_target>1.8</javac_target>
+		<javac_target>11</javac_target>
 		<javacc_version>5.0</javacc_version>
 		<junit_version>4.5</junit_version>
 		<mockito_version>1.10.19</mockito_version>
@@ -48,7 +48,7 @@
 		<jetty_server_version>9.0.3.v20130506</jetty_server_version>
 		<bouncycastle_version>1.50</bouncycastle_version>
 		<guava_version>17.0</guava_version>
-		<jmh_version>1.11.3</jmh_version>
+		<jmh_version>1.22</jmh_version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -491,7 +491,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.5.1</version>
+					<version>3.8.1</version>
 					<configuration>
 						<compilerArgument>-XDignore.symbol.file</compilerArgument>
 						<compilerVersion>${javac_target}</compilerVersion>
@@ -547,11 +547,11 @@
 	<distributionManagement>
 		<repository>
 			<id>aqnote-release</id>
-			<url>http://aqnote.local:8081/repository/aqnote-release</url>
+			<url>http://aqnote.local:8081/repository/aqnote.release</url>
 		</repository>
 		<snapshotRepository>
 			<id>aqnote-snapshot</id>
-			<url>http://aqnote.local:8081/repository/aqnote-snapshot</url>
+			<url>http://aqnote.local:8081/repository/aqnote.snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>

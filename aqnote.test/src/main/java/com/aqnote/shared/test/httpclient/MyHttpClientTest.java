@@ -23,22 +23,22 @@ import org.apache.http.util.EntityUtils;
  */
 public class MyHttpClientTest {
     static PoolingClientConnectionManager connectionManager = null;
-    static HttpClient                     httpclient        = null;
-    
+    static HttpClient httpclient = null;
+
     static {
         connectionManager = new PoolingClientConnectionManager();
         connectionManager.setMaxTotal(1);
         httpclient = new DefaultHttpClient(connectionManager);
         httpclient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 1000);
         httpclient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 1000);
-        httpclient.getParams().setParameter("http.connection-manager.timeout", 60*1000L);
-//        httpclient.getParams().setParameter("http.protocol.head-body-timeout", 1000);
+        httpclient.getParams().setParameter("http.connection-manager.timeout", 60 * 1000L);
+        // httpclient.getParams().setParameter("http.protocol.head-body-timeout", 1000);
     }
 
     public static void main(String[] args) {
 
         System.setProperty("javax.net.debug", "ssl,handshake");
-        System.setProperty("java.protocol.handler.pkgs","com.sun.net.ssl.internal.www.protocol");
+        System.setProperty("java.protocol.handler.pkgs", "com.sun.net.ssl.internal.www.protocol");
 
         for (int i = 0; true; i++) {
             new Thread(new MyTest(httpclient), "trhead-" + i).start();
@@ -51,44 +51,44 @@ public class MyHttpClientTest {
 }
 
 class MyTest implements Runnable {
-    static HttpClient                     httpclient        = null;
+    static HttpClient httpclient = null;
 
-    public MyTest(HttpClient hc){
+    public MyTest(HttpClient hc) {
         httpclient = hc;
     }
 
     public void run() {
-//        while (true) {
-            HttpUriRequest httpget = new HttpGet("http://www.apache.org/");
-            try {
-                HttpResponse response = httpclient.execute(httpget);
+        // while (true) {
+        HttpUriRequest httpget = new HttpGet("http://www.apache.org");
+        try {
+            HttpResponse response = httpclient.execute(httpget);
 
-                HttpEntity entity = response.getEntity();
+            HttpEntity entity = response.getEntity();
 
-                System.out.println("----------------------------------------");
-                System.out.println(response.getStatusLine());
-                if (entity != null) {
-                    System.out.println("Response content length: " + entity.getContentLength());
-                    EntityUtils.toString(entity);
-                    // System.out.println(EntityUtils.toString(entity));
-                }
-                System.out.println("----------------------------------------");
-
-            } catch (ClientProtocolException e) {
-                System.err.println(e);
-            } catch (IOException e) {
-                System.err.println(e);
-            } finally {
-                if (httpget != null) {
-                    httpget.abort();
-                }
+            System.out.println("----------------------------------------");
+            System.out.println(response.getStatusLine());
+            if (entity != null) {
+                System.out.println("Response content length: " + entity.getContentLength());
+                EntityUtils.toString(entity);
+                // System.out.println(EntityUtils.toString(entity));
             }
-//        }
+            System.out.println("----------------------------------------");
+
+        } catch (ClientProtocolException e) {
+            System.err.println(e);
+        } catch (IOException e) {
+            System.err.println(e);
+        } finally {
+            if (httpget != null) {
+                httpget.abort();
+            }
+        }
+        // }
     }
 
 }
 
 /*
- * Timer timer = new Timer(); timer.schedule(new TimerTask() { public void run() { if(httpget != null) {
- * httpget.abort(); } } }, 100);
+ * Timer timer = new Timer(); timer.schedule(new TimerTask() { public void run()
+ * { if(httpget != null) { httpget.abort(); } } }, 100);
  */

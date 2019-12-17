@@ -17,7 +17,6 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 
-
 public class MySSL {
     public static void main(String[] args) throws Exception {
         String host = "www.alipay.com";

@@ -15,20 +15,22 @@ import java.util.Locale;
 
 import org.springframework.util.StringUtils;
 
-public class TestMain {
+public class Main {
 
     public static void main(String[] args)
-        throws IllegalAccessException, InstantiationException, InvocationTargetException {
-        TestMain main = new TestMain();
+            throws IllegalAccessException, InstantiationException, InvocationTargetException {
+        Main main = new Main();
         main.setUp();
     }
 
-    public static Method[] getTestMethods(Class clazz) {
+    public static Method[] getTestMethods(Class<?> clazz) {
         List<Method> result = new ArrayList<Method>();
         while (clazz != null) {
             for (Method method : clazz.getDeclaredMethods()) {
                 int modifiers = method.getModifiers();
-                if (!StringUtils.startsWithIgnoreCase(method.getName(), "test")) { continue; }
+                if (!StringUtils.startsWithIgnoreCase(method.getName(), "test")) {
+                    continue;
+                }
                 ;
                 if (Modifier.isPublic(modifiers) || Modifier.isProtected(modifiers)) {
                     result.add(method);
@@ -39,14 +41,13 @@ public class TestMain {
         return result.toArray(new Method[result.size()]);
     }
 
-
-    private Class clazz;
+    private Class<?> clazz;
     private Object object;
 
     public void setUp() {
         clazz = getClass();
         try {
-            object = clazz.newInstance();
+            object = clazz.getDeclaredConstructors().getClass(); // clazz.newInstance();
             Method[] accessibleMethodArray = getTestMethods(clazz);
 
             System.out.printf("[%s] start\n", clazz.getSimpleName());
@@ -62,8 +63,6 @@ public class TestMain {
                 method.setAccessible(true);
                 Object o = method.invoke(object);
             }
-        } catch (InstantiationException e) {
-            e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -71,7 +70,6 @@ public class TestMain {
         } finally {
             System.out.format("[%s] end\n", clazz.getSimpleName());
         }
-
 
     }
 }

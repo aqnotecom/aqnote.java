@@ -5,34 +5,31 @@
  */
 package com.aqnote.shared.test.hash.collision;
 
-import com.aqnote.shared.test.hash.type.JavaAndOracleHashAlgorithm;
+import com.aqnote.shared.test.hash.JavaDefaultHashAlgorithm;
 
 /**
  * 罗列一批的hash的冲突
- * 
+ *
  * @author "Peng Li"<aqnote@aqnote.com>
  */
 public class ExtCollision {
 
     public static void main(String[] args) {
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "AaAaAaAa"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBBBBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "AaBBBBBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaBBBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBAaBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBBBAa"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "AaAaBBBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "AaBBAaBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "AaBBBBAa"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaAaBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaBBAa"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBAaAa"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "AaAaAaBB"));
-        System.out.println(JavaAndOracleHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaAaAa"));
-        
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "AaAaAaAa"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBBBBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "AaBBBBBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaBBBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBAaBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBBBAa"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "AaAaBBBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "AaBBAaBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "AaBBBBAa"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaAaBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaBBAa"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBBBAaAa"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "AaAaAaBB"));
+        System.out.println(JavaDefaultHashAlgorithm.sameHashcode("AaAaAaAa", "BBAaAaAa"));
+
     }
-    
+
 }
-
-
-
